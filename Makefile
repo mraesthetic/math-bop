@@ -1,4 +1,4 @@
-# Prefer Python 3.12 if available, otherwise fall back to python3
+gi# Prefer Python 3.12 if available, otherwise fall back to python3
 PYTHON := python3.12
 
 VENV_DIR := env
