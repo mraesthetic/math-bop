@@ -26,6 +26,34 @@ class GameConfig(Config):
         self.rtp = 0.9620
         self.construct_paths()
 
+        # Custom win levels for Space Dummies
+        self.win_levels = {
+            "standard": {
+                1: (0, 0.1),
+                2: (0.1, 1.0),
+                3: (1.0, 5.0),
+                4: (5.0, 25.0),
+                5: (25.0, 50.0),      # Substantial win (>25x)
+                6: (50.0, 100.0),     # Big win (>50x)
+                7: (100.0, 250.0),    # Super win (>100x)
+                8: (250.0, 500.0),    # Mega win (>250x)
+                9: (500.0, self.wincap),  # Epic win (>500x)
+                10: (self.wincap, float("inf")),  # Max win (12500x)
+            },
+            "endFeature": {
+                1: (0.0, 1.0),
+                2: (1.0, 5.0),
+                3: (5.0, 10.0),
+                4: (10.0, 25.0),
+                5: (25.0, 50.0),      # Substantial win (>25x)
+                6: (50.0, 100.0),     # Big win (>50x)
+                7: (100.0, 250.0),    # Super win (>100x)
+                8: (250.0, 500.0),    # Mega win (>250x)
+                9: (500.0, self.wincap),  # Epic win (>500x)
+                10: (self.wincap, float("inf")),  # Max win (12500x)
+            },
+        }
+
         # Game Dimensions
         self.num_reels = 5
         self.num_rows = [4] * self.num_reels
