@@ -1,0 +1,271 @@
+VS MULTIPLIER WEIGHT CALCULATIONS
+==================================
+
+REGULAR BONUS:
+-------------
+Original: {2: 830, 3: 170, 4: 60, 5: 22, 8: 3, 10: 1}
+- Total: 1086
+- Weighted: 2×830 + 3×170 + 4×60 + 5×22 + 8×3 + 10×1 = 2554
+- Average: 2554/1086 = 2.352...
+
+Adding 25×:1, 50×:1:
+- Need to maintain ~2.35× average
+
+Let w2 = weight for 2×
+Fixed weights: 3×: 170, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Total fixed weight (excluding 2×): 258
+Fixed weighted sum (excluding 2×): 3×170 + 4×60 + 5×22 + 8×3 + 10×1 + 25×1 + 50×1
+  = 510 + 240 + 110 + 24 + 10 + 25 + 50 = 969
+
+Total = w2 + 258
+Weighted = 2×w2 + 969
+Average = (2×w2 + 969) / (w2 + 258) = 2.35
+
+Solving:
+2×w2 + 969 = 2.35×(w2 + 258)
+2×w2 + 969 = 2.35×w2 + 606.3
+969 - 606.3 = 2.35×w2 - 2×w2
+362.7 = 0.35×w2
+w2 = 362.7 / 0.35 = 1036.29 ≈ 1036
+
+But this is HIGHER than original 830, which seems wrong...
+
+Actually, let me recalculate the original weighted sum:
+2×830 = 1660
+3×170 = 510
+4×60 = 240
+5×22 = 110
+8×3 = 24
+10×1 = 10
+Sum = 1660 + 510 + 240 + 110 + 24 + 10 = 2554 ✓
+
+With 25× and 50× added:
+New weighted sum = 2554 + 25 + 50 = 2629
+New total = 1086 + 2 = 1088
+New average = 2629/1088 = 2.416... (too high)
+
+To get to 2.35:
+Needed weighted sum = 1088 × 2.35 = 2556.8
+Need to reduce by = 2629 - 2556.8 = 72.2
+
+If we reduce 2× weight by 1, weighted sum reduces by 2.
+So we need to reduce 2× by: 72.2 / 2 = 36.1 ≈ 36
+
+New 2× = 830 - 36 = 794
+
+Verify:
+2×: 794, 3×: 170, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Total = 794 + 170 + 60 + 22 + 3 + 1 + 1 + 1 = 1052
+Weighted = 2×794 + 3×170 + 4×60 + 5×22 + 8×3 + 10×1 + 25×1 + 50×1
+  = 1588 + 510 + 240 + 110 + 24 + 10 + 25 + 50 = 2557
+Average = 2557/1052 = 2.431... (still too high)
+
+Need to reduce more. Try 2×: 780:
+Total = 780 + 258 = 1038
+Weighted = 2×780 + 969 = 1560 + 969 = 2529
+Average = 2529/1038 = 2.436... (still high)
+
+Try 2×: 770:
+Total = 770 + 258 = 1028
+Weighted = 2×770 + 969 = 1540 + 969 = 2509
+Average = 2509/1028 = 2.441... (even higher, wrong direction!)
+
+Wait, I'm making an error. Let me recalculate the fixed weighted sum:
+3×170 = 510
+4×60 = 240
+5×22 = 110
+8×3 = 24
+10×1 = 10
+25×1 = 25
+50×1 = 50
+Sum = 510 + 240 + 110 + 24 + 10 + 25 + 50 = 969 ✓
+
+If 2×: 770, then:
+Total = 770 + 258 = 1028
+Weighted = 2×770 + 969 = 1540 + 969 = 2509
+Average = 2509/1028 = 2.441...
+
+That's still too high. The issue is that 969/258 = 3.756, which is much higher than 2.35.
+
+I need to reduce the fixed weights too, not just 2×. Let me try reducing 3× as well:
+
+Try: 2×: 810, 3×: 168 (reduce by 2)
+Fixed: 3×: 168, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Fixed total: 256
+Fixed weighted: 3×168 + 240 + 110 + 24 + 10 + 25 + 50 = 504 + 459 = 963
+
+Total = 810 + 256 = 1066
+Weighted = 2×810 + 963 = 1620 + 963 = 2583
+Average = 2583/1066 = 2.423... (still high)
+
+Try 2×: 800, 3×: 168:
+Total = 800 + 256 = 1056
+Weighted = 2×800 + 963 = 1600 + 963 = 2563
+Average = 2563/1056 = 2.427... (still high)
+
+The problem is that adding 25 and 50 (which contribute 75 to weighted sum) significantly increases the average. I need to reduce 2× more aggressively.
+
+Let me try a different approach: reduce 2× significantly and also reduce 3× a bit more.
+
+Try: 2×: 780, 3×: 165
+Fixed: 3×: 165, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Fixed total: 252
+Fixed weighted: 3×165 + 240 + 110 + 24 + 10 + 25 + 50 = 495 + 459 = 954
+
+Total = 780 + 252 = 1032
+Weighted = 2×780 + 954 = 1560 + 954 = 2514
+Average = 2514/1032 = 2.436... (still high)
+
+Let me try reducing 2× even more: 2×: 760, 3×: 165
+Total = 760 + 252 = 1012
+Weighted = 2×760 + 954 = 1520 + 954 = 2474
+Average = 2474/1012 = 2.444... (still high, this is strange)
+
+Wait, I think I'm calculating the fixed weighted sum wrong. Let me recalculate:
+Fixed weights (excluding 2×): 3×: 165, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Weighted contributions:
+- 3×: 165 → 495
+- 4×: 60 → 240
+- 5×: 22 → 110
+- 8×: 3 → 24
+- 10×: 1 → 10
+- 25×: 1 → 25
+- 50×: 1 → 50
+Total = 495 + 240 + 110 + 24 + 10 + 25 + 50 = 954 ✓
+
+But 954/252 = 3.786, which is the average of the fixed weights. This is higher than 2.35, so adding more 2× (which has value 2) will bring the average DOWN, not up.
+
+So if I have:
+Total = w2 + 252
+Weighted = 2×w2 + 954
+Average = (2×w2 + 954) / (w2 + 252)
+
+For average = 2.35:
+2×w2 + 954 = 2.35×(w2 + 252)
+2×w2 + 954 = 2.35×w2 + 592.2
+954 - 592.2 = 2.35×w2 - 2×w2
+361.8 = 0.35×w2
+w2 = 361.8 / 0.35 = 1033.7 ≈ 1034
+
+So with 3×: 165, we need 2×: 1034. That's higher than 830, which makes sense because we reduced 3× from 170 to 165.
+
+But the user wants to keep 2× as the most common, and we don't want to increase it too much. Let me try a different balance:
+
+Goal: Keep average ~2.35, add 25× and 50×, keep 2× most common but not increase it too much.
+
+Let's try: 2×: 810, 3×: 168, keep others the same
+Fixed (excluding 2×): 3×: 168, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Fixed total: 256
+Fixed weighted: 504 + 240 + 110 + 24 + 10 + 25 + 50 = 963
+
+Total = 810 + 256 = 1066
+Weighted = 2×810 + 963 = 1620 + 963 = 2583
+Average = 2583/1066 = 2.423...
+
+Still too high. I need to reduce 2× more or reduce other weights more.
+
+Try: 2×: 800, 3×: 167
+Fixed: 3×: 167, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Fixed total: 255
+Fixed weighted: 501 + 240 + 110 + 24 + 10 + 25 + 50 = 960
+
+Total = 800 + 255 = 1055
+Weighted = 2×800 + 960 = 1600 + 960 = 2560
+Average = 2560/1055 = 2.427...
+
+Still high. Let me try: 2×: 790, 3×: 167
+Total = 790 + 255 = 1045
+Weighted = 2×790 + 960 = 1580 + 960 = 2540
+Average = 2540/1045 = 2.431...
+
+Still high. The issue is that the fixed weights (with 25× and 50×) have a high average contribution.
+
+Let me try reducing 3× more: 2×: 810, 3×: 165
+Fixed: 3×: 165, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+Fixed total: 253
+Fixed weighted: 495 + 240 + 110 + 24 + 10 + 25 + 50 = 954
+
+Total = 810 + 253 = 1063
+Weighted = 2×810 + 954 = 1620 + 954 = 2574
+Average = 2574/1063 = 2.421...
+
+Still high. I think I need to use the algebraic solution. Let me solve properly:
+
+For regular bonus with fixed weights (excluding 2×):
+Let fixed_total = sum of weights for {3, 4, 5, 8, 10, 25, 50}
+Let fixed_weighted = weighted sum for those multipliers
+
+If we use: 3×: 170, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+fixed_total = 258
+fixed_weighted = 969
+
+We want: (2×w2 + 969) / (w2 + 258) = 2.35
+2×w2 + 969 = 2.35×w2 + 606.3
+362.7 = 0.35×w2
+w2 = 1036
+
+So with these fixed weights, we need w2 = 1036. But this is higher than the original 830, which means we'd be increasing the weight of 2×, which goes against the goal of keeping it similar or reducing it.
+
+The solution is to REDUCE the fixed weights, particularly 3×, so that we need a LOWER w2.
+
+Let me try: 3×: 165 (reduce by 5), keep others
+Fixed: 3×: 165, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+fixed_total = 253
+fixed_weighted = 3×165 + 240 + 110 + 24 + 10 + 25 + 50 = 495 + 459 = 954
+
+We want: (2×w2 + 954) / (w2 + 253) = 2.35
+2×w2 + 954 = 2.35×w2 + 594.55
+359.45 = 0.35×w2
+w2 = 1027
+
+Still higher than 830. Let me reduce 3× more: 3×: 160
+Fixed: 3×: 160, 4×: 60, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+fixed_total = 248
+fixed_weighted = 480 + 459 = 939
+
+We want: (2×w2 + 939) / (w2 + 248) = 2.35
+2×w2 + 939 = 2.35×w2 + 582.8
+356.2 = 0.35×w2
+w2 = 1018
+
+Still higher. Let me try: 3×: 155
+fixed_total = 243
+fixed_weighted = 465 + 459 = 924
+
+We want: (2×w2 + 924) / (w2 + 243) = 2.35
+2×w2 + 924 = 2.35×w2 + 571.05
+352.95 = 0.35×w2
+w2 = 1008
+
+Getting closer. Let me try: 3×: 150
+fixed_total = 238
+fixed_weighted = 450 + 459 = 909
+
+We want: (2×w2 + 909) / (w2 + 238) = 2.35
+2×w2 + 909 = 2.35×w2 + 559.3
+349.7 = 0.35×w2
+w2 = 999
+
+Still higher than 830. I think the issue is that I'm trying to keep 3× too high. But actually, maybe it's okay to have w2 higher than 830? The user said "keep 2× as most common", which it still will be even if the weight is higher.
+
+But actually, if I increase w2 from 830 to 1036, that's a big increase. Let me think about this differently.
+
+Maybe I should reduce other weights too, not just 3×. Let me try reducing 4× as well:
+
+Try: 3×: 168, 4×: 58 (reduce by 2)
+Fixed: 3×: 168, 4×: 58, 5×: 22, 8×: 3, 10×: 1, 25×: 1, 50×: 1
+fixed_total = 254
+fixed_weighted = 504 + 232 + 110 + 24 + 10 + 25 + 50 = 955
+
+We want: (2×w2 + 955) / (w2 + 254) = 2.35
+2×w2 + 955 = 2.35×w2 + 596.9
+358.1 = 0.35×w2
+w2 = 1023
+
+Still high. 
+
+I realize the core challenge is maintaining the original average while introducing new multipliers. The key is finding a balance that keeps the overall distribution consistent, even if individual weights shift. Reducing multiple weights simultaneously might help achieve the target average more effectively.
+
+The goal is to preserve the fundamental distribution characteristics while making necessary adjustments. This might require more nuanced weight modifications across different multiplier categories.
+
+Exploring a different strategy, I'll consider a more balanced approach to weight reduction that maintains the overall statistical integrity of the system.
