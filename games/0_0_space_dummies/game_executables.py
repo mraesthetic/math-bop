@@ -6,14 +6,7 @@ class GameExecutables(GameCalculations):
 
     def evaluate_lines_board(self):
         """Populate win-data, record wins, transmit events."""
-        self.win_data = Lines.get_lines(
-            self.board,
-            self.config,
-            wild_key="wild",
-            wild_sym="wild",
-            multiplier_method="symbol",
-            global_multiplier=self.global_multiplier,
-        )
+        self.win_data = Lines.get_lines(self.board, self.config, global_multiplier=self.global_multiplier)
         Lines.record_lines_wins(self)
         self.win_manager.update_spinwin(self.win_data["totalWin"])
         Lines.emit_linewin_events(self)

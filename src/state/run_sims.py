@@ -8,6 +8,8 @@ from warnings import warn
 import shutil
 import asyncio
 from typing import Dict
+from datetime import datetime
+import psutil
 
 from src.write_data.write_data import output_lookup_and_force_files
 
@@ -37,6 +39,8 @@ def create_books(
 
     startTime = time.time()
     print("\nCreating books...")
+    mode_count = 0
+    total_modes = len([k for k, v in num_sim_args.items() if v > 0])
     for betmode_name in num_sim_args:
         sim_counter = 0
         for bm in config.bet_modes:
@@ -49,8 +53,13 @@ def create_books(
             set_sim_amount = True
 
         if num_sim_args[betmode_name] > 0:
+            mode_count += 1
+            mode_start_time = time.time()
+            print(f"\n[{datetime.now().strftime('%H:%M:%S')}] Processing mode {mode_count}/{total_modes}: {betmode_name}")
+            print(f"   - Requested simulations: {num_sim_args[betmode_name]:,}")
             gamestate.betmode = betmode_name
             nsims = max(num_sim_args[betmode_name], sim_counter)
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Starting run_multi_process_sims()...")
             run_multi_process_sims(
                 threads,
                 batch_size,
@@ -63,7 +72,10 @@ def create_books(
                 profiling=profiling,
                 set_sim_amount=set_sim_amount,
             )
-
+            sim_elapsed = time.time() - mode_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] run_multi_process_sims() completed (took {sim_elapsed:.1f} seconds)")
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Starting output_lookup_and_force_files()...")
+            output_start_time = time.time()
             output_lookup_and_force_files(
                 threads,
                 batch_size,
@@ -73,6 +85,10 @@ def create_books(
                 num_sims=nsims,
                 compress=compress,
             )
+            output_elapsed = time.time() - output_start_time
+            mode_total_elapsed = time.time() - mode_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] output_lookup_and_force_files() completed (took {output_elapsed:.1f} seconds)")
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Mode {betmode_name} complete! Total time: {mode_total_elapsed:.1f} seconds\n")
     shutil.rmtree(gamestate.output_files.temp_path)
     print("\nFinished creating books in", time.time() - startTime, "seconds.\n")
 
@@ -148,8 +164,14 @@ def run_multi_process_sims(
 ):
     """Setup multiprocessing manager for running all game-mode simulations."""
     print("\nCreating books for", game_id, "in", betmode)
+    print(f"   [{datetime.now().strftime('%H:%M:%S')}] Calculating simulation parameters...")
     num_repeats = max(int(round(num_sims / threads / batching_size, 0)), 1)
     sims_per_thread = int(num_sims / threads / num_repeats)
+    print(f"   - Total simulations: {num_sims:,}")
+    print(f"   - Threads: {threads}")
+    print(f"   - Batch size: {batching_size:,}")
+    print(f"   - Repeats: {num_repeats}")
+    print(f"   - Simulations per thread per repeat: {sims_per_thread:,}")
     if not set_sim_amount:
         num_sims_criteria = get_sim_splits(gamestate, num_sims, betmode)
         sim_criteria = assign_sim_criteria(num_sims_criteria, num_sims)
@@ -203,10 +225,12 @@ def run_multi_process_sims(
             simulation_seeds.append(offset_val)
 
     for repeat in range(num_repeats):
-        print("Batch", repeat + 1, "of", num_repeats)
+        batch_start_time = time.time()
+        print(f"\n   [{datetime.now().strftime('%H:%M:%S')}] Starting Batch {repeat + 1} of {num_repeats}")
         processes = []
         manager = Manager()
         all_betmode_configs = manager.list()
+        print(f"   [{datetime.now().strftime('%H:%M:%S')}] Created Manager and shared list")
         if profiling:
             asyncio.run(
                 profile_and_visualize(
@@ -225,6 +249,8 @@ def run_multi_process_sims(
                 )
             )
         elif threads == 1:
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Running single-threaded simulation...")
+            single_start_time = time.time()
             gamestate.run_sims(
                 betmode_copy_list=all_betmode_configs,
                 betmode=betmode,
@@ -238,7 +264,16 @@ def run_multi_process_sims(
                 write_event_list=write_event_list,
                 simulation_seeds=simulation_seeds,
             )
+            single_elapsed = time.time() - single_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Single-threaded simulation completed (took {single_elapsed:.1f} seconds)")
+            gamestate.combine(all_betmode_configs, betmode)
+            gamestate.get_betmode(betmode).lock_force_keys()
+            manager.shutdown()
+            batch_elapsed = time.time() - batch_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Batch {repeat + 1} complete! Time: {batch_elapsed:.1f} seconds")
         else:
+            thread_start_time = time.time()
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Starting {threads} worker processes...")
             for thread in range(threads):
                 process = Process(
                     target=gamestate.run_sims,
@@ -256,13 +291,82 @@ def run_multi_process_sims(
                         simulation_seeds,
                     ),
                 )
-                print("Started thread", thread)
+                print(f"   [{datetime.now().strftime('%H:%M:%S')}] Started thread {thread}")
                 process.start()
                 processes += [process]
-            print("All threads are online.")
-            for process in processes:
-                process.join()
-            print("Finished joining threads.")
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] All threads are online. Waiting for threads to complete...")
+            print(f"   - This may take a while depending on number of simulations per thread ({sims_per_thread:,})")
+            join_start_time = time.time()
+            last_status_time = time.time()
+            completed_processes = set()
+            
+            # Join processes with periodic status updates
+            while len(completed_processes) < len(processes):
+                current_time = time.time()
+                elapsed = current_time - join_start_time
+                
+                # Periodic status update every 30 seconds
+                if current_time - last_status_time >= 30:
+                    alive_count = sum(1 for p in processes if p.is_alive())
+                    elapsed_min = int(elapsed // 60)
+                    elapsed_sec = int(elapsed % 60)
+                    
+                    # Get remaining thread IDs and their runtimes
+                    remaining_threads = []
+                    for i, process in enumerate(processes):
+                        if i not in completed_processes and process.is_alive():
+                            thread_elapsed = elapsed  # All threads started at the same time
+                            remaining_threads.append((i, thread_elapsed))
+                    
+                    # Get CPU and memory usage for remaining processes
+                    cpu_percents = []
+                    mem_mbs = []
+                    for i, process in enumerate(processes):
+                        if i not in completed_processes and process.is_alive():
+                            try:
+                                proc = psutil.Process(process.pid)
+                                cpu_percents.append(proc.cpu_percent(interval=0.1))
+                                mem_mbs.append(proc.memory_info().rss / (1024 * 1024))
+                            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                                pass
+                    
+                    # Build status message
+                    status_msg = f"   [{datetime.now().strftime('%H:%M:%S')}] Status: {alive_count} threads still running, {len(completed_processes)} completed (elapsed: {elapsed_min}m {elapsed_sec}s)"
+                    if remaining_threads:
+                        thread_list = ", ".join([f"Thread {tid} ({int(te//60)}m {int(te%60)}s)" for tid, te in remaining_threads])
+                        status_msg += f"\n      Still running: {thread_list}"
+                    if cpu_percents:
+                        avg_cpu = sum(cpu_percents) / len(cpu_percents) if cpu_percents else 0
+                        avg_mem = sum(mem_mbs) / len(mem_mbs) if mem_mbs else 0
+                        status_msg += f"\n      Avg CPU usage: {avg_cpu:.1f}%, Avg memory: {avg_mem:.1f} MB"
+                        if avg_cpu < 1.0 and elapsed_min > 5:
+                            status_msg += " ⚠️ LOW CPU - thread may be stuck!"
+                    
+                    print(status_msg)
+                    last_status_time = current_time
+                
+                # Try joining each remaining process with a short timeout
+                for i, process in enumerate(processes):
+                    if i not in completed_processes:
+                        process.join(timeout=1.0)
+                        # Check if process finished (join returns immediately if already done, or after timeout if still running)
+                        if not process.is_alive() and i not in completed_processes:
+                            completed_processes.add(i)
+                            elapsed = time.time() - join_start_time
+                            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Thread {i} completed! (elapsed: {elapsed:.1f}s, {len(completed_processes)}/{len(processes)} done)")
+                            last_status_time = time.time()
+                            break  # Break to restart the loop and check all processes again
+            
+            join_elapsed = time.time() - join_start_time
+            thread_total_elapsed = time.time() - thread_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] All threads finished! Total thread time: {thread_total_elapsed:.1f} seconds")
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Combining results...")
+            combine_start_time = time.time()
             gamestate.combine(all_betmode_configs, betmode)
+            combine_elapsed = time.time() - combine_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Results combined (took {combine_elapsed:.1f} seconds)")
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Locking force keys...")
             gamestate.get_betmode(betmode).lock_force_keys()
             manager.shutdown()
+            batch_elapsed = time.time() - batch_start_time
+            print(f"   [{datetime.now().strftime('%H:%M:%S')}] Batch {repeat + 1} complete! Time: {batch_elapsed:.1f} seconds")

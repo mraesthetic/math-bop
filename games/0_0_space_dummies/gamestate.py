@@ -1,4 +1,5 @@
 from game_override import GameStateOverride
+from src.events.events import reveal_event
 
 
 class GameState(GameStateOverride):
@@ -16,6 +17,8 @@ class GameState(GameStateOverride):
 
             self.win_manager.update_gametype_wins(self.gametype)
             if self.check_fs_condition():
+                scatter_total = self.count_special_symbols("scatter")
+                self.pending_bonus_mode = "hyper" if scatter_total >= 4 else "rocket"
                 self.run_freespin_from_base()
 
             self.evaluate_finalwin()
@@ -24,22 +27,20 @@ class GameState(GameStateOverride):
 
     def run_freespin(self):
         self.reset_fs_spin()
-        while self.fs < self.tot_fs:
+        self.initialize_bonus_session()
+        while self.fs < self.tot_fs and not self.wincap_triggered:
             self.update_freespin()
-            self.draw_board()
-            # Restore sticky wilds after drawing new board
-            self.restore_sticky_wilds_on_board()
+            self.draw_bonus_board(emit_event=False)
+            self.apply_existing_sticky_wilds()
+            self.capture_new_sticky_wilds()
+            reveal_event(self)
 
             self.evaluate_lines_board()
-
-            # Capture new wilds that landed (only on reels 2-4)
-            self.capture_sticky_wilds_from_board()
-
-            if self.check_fs_condition():
-                self.update_fs_retrigger_amt()
+            removed_symbol = self.process_edge_scatter_removal()
+            if removed_symbol is not None:
+                self.record({"event": "symbolRemoval", "symbol": removed_symbol, "mode": self.active_bonus_mode})
 
             self.win_manager.update_gametype_wins(self.gametype)
 
+        self.clear_bonus_session()
         self.end_freespin()
-        # Reset bonus state when free spins end
-        self.reset_bonus_state()

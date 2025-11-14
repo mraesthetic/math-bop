@@ -206,6 +206,14 @@ Symbol removal is used to "decompress" the reel set during bonus rounds, making 
 5\. Bonus Features
 ------------------
 
+### 5.0 Extra Chance Spin (Enhanced Chance of Feature Spin)
+
+Pay 3x bet each spin to get an increased chance of landing 3-4 scatters.
+
+Not counted as a real bonus but up to you on how to count it
+
+---
+
 In all bonus modes:
 
 -   Wilds only land on reels **2, 3, and 4**.
@@ -214,7 +222,7 @@ In all bonus modes:
 
 ### 5.1 Rocket Riot Bonus (Regular Bonus)
 
-**Trigger:** Land **3 Scatter** symbols in the base game.
+**Trigger:** Land **3 Scatter** symbols in the base game OR pay 100x bet to buy via bonus buy.
 
 **Setup:**
 
@@ -248,7 +256,7 @@ In all bonus modes:
 
 * * * * *
 
-### 5.2 Hyperdrive Havoc Bonus (Super Bonus)
+### 5.2 Hyperdrive Havoc Bonus (Super Bonus) OR pay 200x bet to buy via bonus buy.
 
 **Trigger:** Land **4 or 5 Scatter** symbols in the base game.
 
@@ -321,11 +329,11 @@ In all bonus modes:
 
 Feature buys are optional modes that allow the player to pay an upfront price to access increased bonus potential.
 
-| Feature Buy Name | Description | RTP Target (approx.) |
+| Feature Buy Name | Description | RTP Target (approx.) | Cost
 | --- | --- | --- |
-| Bonus Hunt Spins | Spins with ~3× chance of landing any bonus | 96.20% (tunable) |
-| Rocket Riot Bonus | Direct buy of the 3-Scatter regular bonus | 96.20% (tunable) |
-| Hyperdrive Havoc | Direct buy of the 4+/5-Scatter super bonus | 96.20% (tunable) |
+| Bonus Hunt Spins | Spins with ~3× chance of landing any bonus | 96.20% (tunable) | 3x bet
+| Rocket Riot Bonus | Direct buy of the 3-Scatter regular bonus | 96.20% (tunable) | 100x bet
+| Hyperdrive Havoc | Direct buy of the 4+/5-Scatter super bonus | 96.20% (tunable) | 200x bet
 
 > Exact prices and RTPs will be finalized during math balancing but should align to an overall 96.20% target.
 
