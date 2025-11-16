@@ -4,7 +4,12 @@ from typing import Optional
 
 from game_executables import GameExecutables
 from src.calculations.statistics import get_random_outcome
-from src.events.events import fs_trigger_event, reveal_event
+from src.events.events import (
+    fs_trigger_event,
+    reveal_event,
+    symbol_removal_event,
+    symbol_removal_notice_event,
+)
 
 
 class GameStateOverride(GameExecutables):
@@ -20,6 +25,7 @@ class GameStateOverride(GameExecutables):
         self.pending_bonus_mode = None
         self.active_bonus_mode = None
         self.bonus_reel_maps = {}
+        self.active_reel_weights = None
         self.sticky_wild_positions = {}
         self.removed_symbols = set()
         self.next_symbol_removal_index = 0
@@ -49,15 +55,29 @@ class GameStateOverride(GameExecutables):
         self.removed_symbols = set()
         self.next_symbol_removal_index = 0
 
-        freegame_reel_weights = self.get_current_distribution_conditions()["reel_weights"][self.config.freegame_type]
+        base_reel_weights = self.get_current_distribution_conditions()["reel_weights"][self.config.freegame_type]
+        self.active_reel_weights = self._select_bonus_reel_weights(base_reel_weights)
         self.bonus_reel_maps = {
-            reel_id: deepcopy(self.config.reels[reel_id]) for reel_id in freegame_reel_weights.keys()
+            reel_id: deepcopy(self.config.reels[reel_id]) for reel_id in self.active_reel_weights.keys()
         }
 
         if self.active_bonus_mode == "hyper":
             for symbol_name in self.config.symbol_ids["low"]:
                 self._remove_symbol_from_bonus_reels(symbol_name)
+                self.removed_symbols.add(symbol_name)
             self.next_symbol_removal_index = len(self.config.symbol_ids["low"])
+            self.seed_initial_sticky_wilds(min_new=2, max_new=3)
+            self._emit_symbol_removal_events(initial=True)
+        elif self.active_bonus_mode == "rocket":
+            self.seed_initial_sticky_wilds(min_new=0, max_new=2)
+
+    def _select_bonus_reel_weights(self, base_weights):
+        """Return the reel selection map to use for the pending bonus mode."""
+        if self.active_bonus_mode == "hyper" and "WCAP" in self.config.reels:
+            return {"WCAP": sum(base_weights.values()) or 1}
+        if self.active_bonus_mode == "rocket" and "FR0" in self.config.reels:
+            return {"FR0": sum(base_weights.values()) or 1}
+        return base_weights
 
     def clear_bonus_session(self):
         self.active_bonus_mode = None
@@ -65,6 +85,7 @@ class GameStateOverride(GameExecutables):
         self.sticky_wild_positions = {}
         self.removed_symbols = set()
         self.next_symbol_removal_index = 0
+        self.active_reel_weights = None
 
     def _remove_symbol_from_bonus_reels(self, symbol_name: str) -> bool:
         """Remove a symbol from all bonus reel copies; returns True if anything changed."""
@@ -83,23 +104,25 @@ class GameStateOverride(GameExecutables):
 
     def remove_next_symbol_in_queue(self) -> Optional[str]:
         """Remove the next symbol in the configured hierarchy."""
-        if self.next_symbol_removal_index >= len(self.config.symbol_removal_order):
-            return None
-        target_symbol = self.config.symbol_removal_order[self.next_symbol_removal_index]
-        self.next_symbol_removal_index += 1
-        if target_symbol in self.removed_symbols:
-            return target_symbol
-        removed = self._remove_symbol_from_bonus_reels(target_symbol)
-        if removed:
-            return target_symbol
-        return target_symbol
+        while self.next_symbol_removal_index < len(self.config.symbol_removal_order):
+            target_symbol = self.config.symbol_removal_order[self.next_symbol_removal_index]
+            self.next_symbol_removal_index += 1
+            if target_symbol in self.removed_symbols:
+                continue
+            removed = self._remove_symbol_from_bonus_reels(target_symbol)
+            if removed:
+                return target_symbol
+        return None
 
     def draw_bonus_board(self, emit_event: bool = True):
         """Create a board using the mutable bonus reelstrips."""
         if not self.bonus_reel_maps:
             raise RuntimeError("Bonus reel strips not initialized.")
 
-        freegame_reel_weights = self.get_current_distribution_conditions()["reel_weights"][self.gametype]
+        if self.gametype == self.config.freegame_type and self.active_reel_weights:
+            freegame_reel_weights = self.active_reel_weights
+        else:
+            freegame_reel_weights = self.get_current_distribution_conditions()["reel_weights"][self.gametype]
         reelstrip_id = get_random_outcome(freegame_reel_weights)
         reelstrip = self.bonus_reel_maps[reelstrip_id]
 
@@ -189,6 +212,36 @@ class GameStateOverride(GameExecutables):
                 new_wilds.append({"reel": reel, "row": row, "multiplier": multiplier})
         return new_wilds
 
+    def seed_initial_sticky_wilds(self, min_new: int, max_new: int) -> None:
+        """Seed sticky wilds before the first bonus spin begins."""
+        if max_new <= 0:
+            return
+        count = random.randint(max(min_new, 0), max_new)
+        if count <= 0:
+            return
+
+        allowed_reels = range(1, self.config.num_reels - 1)
+        positions = [
+            (reel, row)
+            for reel in allowed_reels
+            for row in range(self.config.num_rows[reel])
+        ]
+        random.shuffle(positions)
+        for reel, row in positions[:count]:
+            self.sticky_wild_positions[(reel, row)] = self._get_seed_multiplier()
+
+    def _get_seed_multiplier(self) -> int:
+        dist = self.get_current_distribution_conditions().get("mult_values", {})
+        weights = dist.get(self.config.freegame_type) or {2: 40, 3: 35, 5: 20, 10: 5}
+        total = sum(weights.values()) or 1
+        target = random.random() * total
+        upto = 0
+        for mult, weight in weights.items():
+            upto += weight
+            if upto >= target:
+                return mult
+        return 2
+
     def process_edge_scatter_removal(self) -> Optional[str]:
         """Check for Scatter on reels 1 and 5, award spins and remove symbols if needed."""
         scatter_positions = self.special_syms_on_board.get("scatter", [])
@@ -200,7 +253,26 @@ class GameStateOverride(GameExecutables):
         # +2 free spins per spec
         self.tot_fs += 2
         fs_trigger_event(self, freegame_trigger=True, basegame_trigger=False)
-        return self.remove_next_symbol_in_queue()
+        removed_symbol = self.remove_next_symbol_in_queue()
+        if removed_symbol:
+            self._emit_symbol_removal_events(removed_symbol=removed_symbol)
+        return removed_symbol
+
+    def _emit_symbol_removal_events(self, removed_symbol: Optional[str] = None, initial: bool = False):
+        """Send backend + frontend notifications about current removal state."""
+        ordered_removed = [sym for sym in self.config.symbol_removal_order if sym in self.removed_symbols]
+        if not ordered_removed and not initial:
+            return
+        symbol_removal_event(self, ordered_removed, initial=initial)
+        if removed_symbol:
+            remaining = [sym for sym in self.config.symbol_removal_order if sym not in self.removed_symbols]
+            symbol_removal_notice_event(
+                self,
+                removed_symbol=removed_symbol,
+                remaining_symbols=remaining,
+                total_removed=len(self.removed_symbols),
+                bonus_mode=self.active_bonus_mode,
+            )
 
     def check_repeat(self):
         super().check_repeat()

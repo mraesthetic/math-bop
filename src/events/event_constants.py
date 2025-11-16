@@ -34,3 +34,4 @@ class EventConstants(Enum):
     STICKY_WILD_UPDATE = "stickyWildUpdate"
     STICKY_WILD_RESET = "stickyWildReset"
     SYMBOL_REMOVAL = "symbolRemoval"
+    SYMBOL_REMOVAL_NOTICE = "symbolRemovalNotice"

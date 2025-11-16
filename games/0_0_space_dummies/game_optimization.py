@@ -69,6 +69,9 @@ class OptimizationSetup:
 
         wincap_win = self.game_config.wincap
 
+        # Target RTP split (approx):
+        # - Base mode contributes ~0.63 of total RTP via line wins.
+        # - Natural Rocket Riot (~0.21) + Hyperdrive (~0.11) are wrapped under freegame criteria.
         self.game_config.opt_params = {
             "base": {
                 "conditions": {
@@ -77,9 +80,9 @@ class OptimizationSetup:
                     ).return_dict(),
                     "0": ConstructConditions(rtp=0.0, av_win=0.0, search_conditions=0).return_dict(),
                     "freegame": ConstructConditions(
-                        rtp=0.54, hr=200, search_conditions={"symbol": "scatter"}
+                        rtp=0.33, hr=200, search_conditions={"symbol": "scatter"}
                     ).return_dict(),
-                    "basegame": ConstructConditions(hr=3.2, rtp=0.42).return_dict(),
+                    "basegame": ConstructConditions(hr=3.8, rtp=0.63).return_dict(),
                 },
                 "scaling": base_scaling,
                 "parameters": base_parameters,
@@ -96,9 +99,9 @@ class OptimizationSetup:
                     ).return_dict(),
                     "0": ConstructConditions(rtp=0.0, av_win=0.0, search_conditions=0).return_dict(),
                     "freegame": ConstructConditions(
-                        rtp=0.74, hr=150, search_conditions={"symbol": "scatter"}
+                        rtp=0.70, hr=160, search_conditions={"symbol": "scatter"}
                     ).return_dict(),
-                    "basegame": ConstructConditions(hr=4.5, rtp=0.22).return_dict(),
+                    "basegame": ConstructConditions(hr=4.2, rtp=0.26).return_dict(),
                 },
                 "scaling": base_scaling,
                 "parameters": base_parameters,

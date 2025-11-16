@@ -185,6 +185,19 @@ def symbol_removal_event(gamestate, removed_symbols, initial=False):
     gamestate.book.add_event(event)
 
 
+def symbol_removal_notice_event(gamestate, removed_symbol, remaining_symbols, total_removed, bonus_mode):
+    """Emit granular notice whenever a symbol is removed from the pool."""
+    event = {
+        "index": len(gamestate.book.events),
+        "type": EventConstants.SYMBOL_REMOVAL_NOTICE.value,
+        "removedSymbol": removed_symbol,
+        "remainingSymbols": remaining_symbols,
+        "totalRemoved": total_removed,
+        "mode": bonus_mode,
+    }
+    gamestate.book.add_event(event)
+
+
 def win_info_event(gamestate, include_padding_index=True):
     """
     include_padding_index: starts winning-symbol positions at row=1, to account for top/bottom symbol inclusion in board

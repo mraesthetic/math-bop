@@ -89,6 +89,7 @@ class PrintXLSX:
         hr_dict = self.game_info.mode_hit_rate_info[mode]["all_gameType_hits"]
         rtp_dict = self.game_info.mode_hit_rate_info[mode]["all_gameType_rtp"]
 
+        last_idy = -1
         for idx, win_range in enumerate(self.global_ranges):
             self.hit_rate_sheet.write(
                 x0 + idx + 1, game_col_start, str(win_range))
@@ -98,11 +99,12 @@ class PrintXLSX:
                     x0 + idx + 1, game_col_start + 1 +
                     idy, str(hr_dict[game_type][list(self.global_ranges)[idx]])
                 )
+                last_idy = idy
 
         # Write symbol hit-rate table
         symRow = len(self.global_ranges) + 5
         symCol = 0
-        self.top_row_col_end = game_col_start + 4 + idy
+        self.top_row_col_end = game_col_start + 4 + max(last_idy, 0)
         sym_mode_hit_rate = self.game_info.hr_summary[mode]
         sym_count_hit_rate = self.game_info.sim_count_summary[mode]
         sym_avg_win = self.game_info.av_win_summary[mode]
