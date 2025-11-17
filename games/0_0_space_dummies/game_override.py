@@ -133,7 +133,11 @@ class GameStateOverride(GameExecutables):
                     continue
                 filtered_strip = [sym for sym in reel_strip if sym != symbol_name]
                 if not filtered_strip:
-                    raise RuntimeError(f"Removing '{symbol_name}' exhausted reel {reel_index} in {reel_id}.")
+                    # Removing this symbol would empty the strip; instead, replace scatters with lows.
+                    fallback_symbols = self.config.symbol_ids["low"] or [sym for sym in reel_strip if sym != symbol_name]
+                    replacements = [random.choice(fallback_symbols) for _ in reel_strip]
+                    self.bonus_reel_maps[reel_id][reel_index] = replacements
+                    continue
                 replacements = self._replicate_symbols(filtered_strip, len(reel_strip) - len(filtered_strip))
                 new_strip = filtered_strip + replacements
                 random.shuffle(new_strip)
