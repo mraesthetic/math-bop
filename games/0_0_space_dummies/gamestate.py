@@ -56,10 +56,22 @@ class GameState(GameStateOverride):
         self.imprint_wins()
 
     def run_freespin(self):
+        debug_fs = os.getenv("SIM_DEBUG_PROGRESS", "0") != "0"
+        fs_interval = max(int(os.getenv("SIM_DEBUG_FS_INTERVAL", "5")), 1)
         self.reset_fs_spin()
         self.initialize_bonus_session()
+        if debug_fs:
+            print(
+                "[sim-debug] fs_start mode={mode} criteria={criteria} total_fs={tot}".format(
+                    mode=self.betmode,
+                    criteria=self.criteria,
+                    tot=self.tot_fs,
+                ),
+                flush=True,
+            )
         while self.fs < self.tot_fs and not self.wincap_triggered:
             self.update_freespin()
+            current_fs = self.fs
             self.draw_bonus_board(emit_event=False)
             self.apply_existing_sticky_wilds()
             self.capture_new_sticky_wilds()
@@ -72,5 +84,34 @@ class GameState(GameStateOverride):
 
             self.win_manager.update_gametype_wins(self.gametype)
 
+            if debug_fs and (
+                current_fs == 1 or current_fs == self.tot_fs or current_fs % fs_interval == 0
+            ):
+                print(
+                    "[sim-debug] fs_progress mode={mode} criteria={criteria} spin={current}/{total} "
+                    "session_win={win:.4f} removed={removed} retriggers={tot_fs}".format(
+                        mode=self.betmode,
+                        criteria=self.criteria,
+                        current=current_fs,
+                        total=self.tot_fs,
+                        win=self.win_manager.freegame_wins,
+                        removed=len(self.removed_symbols),
+                        tot_fs=self.tot_fs,
+                    ),
+                    flush=True,
+                )
+
         self.clear_bonus_session()
         self.end_freespin()
+        if debug_fs:
+            print(
+                "[sim-debug] fs_end mode={mode} criteria={criteria} final_fs={tot} session_win={win:.4f} "
+                "wincap_triggered={cap}".format(
+                    mode=self.betmode,
+                    criteria=self.criteria,
+                    tot=self.tot_fs,
+                    win=self.win_manager.freegame_wins,
+                    cap=self.wincap_triggered,
+                ),
+                flush=True,
+            )
