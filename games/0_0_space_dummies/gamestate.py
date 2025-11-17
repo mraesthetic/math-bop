@@ -1,3 +1,5 @@
+import os
+
 from game_override import GameStateOverride
 from src.events.events import reveal_event
 
@@ -6,9 +8,25 @@ class GameState(GameStateOverride):
     """Handles game logic and events for a single simulation number/game-round."""
 
     def run_spin(self, sim, simulation_seed=None):
+        debug_spin = os.getenv("SIM_DEBUG_PROGRESS", "0") != "0"
+        attempt_interval = max(int(os.getenv("SIM_DEBUG_SPIN_INTERVAL", "100")), 1)
+        attempt = 0
         self.reset_seed(sim)
         self.repeat = True
         while self.repeat:
+            attempt += 1
+            if debug_spin and (attempt == 1 or attempt % attempt_interval == 0):
+                print(
+                    "[sim-debug] spin_attempt mode={mode} criteria={criteria} attempt={attempt} "
+                    "betmode={betmode} seed={seed}".format(
+                        mode=self.betmode,
+                        criteria=self.criteria,
+                        attempt=attempt,
+                        betmode=self.betmode,
+                        seed=simulation_seed,
+                    ),
+                    flush=True,
+                )
             self.reset_book()
             self.draw_board()
 
@@ -23,6 +41,18 @@ class GameState(GameStateOverride):
 
             self.evaluate_finalwin()
             self.check_repeat()
+            if debug_spin and not self.repeat:
+                print(
+                    "[sim-debug] spin_resolved mode={mode} criteria={criteria} attempts={attempt} "
+                    "final_win={win:.4f} triggered_fg={fg}".format(
+                        mode=self.betmode,
+                        criteria=self.criteria,
+                        attempts=attempt,
+                        win=self.final_win,
+                        fg=self.triggered_freegame,
+                    ),
+                    flush=True,
+                )
         self.imprint_wins()
 
     def run_freespin(self):

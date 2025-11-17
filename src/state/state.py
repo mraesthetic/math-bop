@@ -214,11 +214,28 @@ class GeneralGameState(ABC):
         """Checks if the spin failed a criteria constraint at any point."""
         if self.repeat is False:
             win_criteria = self.get_current_betmode_distributions().get_win_criteria()
+            debug_repeat = os.getenv("SIM_DEBUG_PROGRESS", "0") != "0"
             if win_criteria is not None and self.final_win != win_criteria:
                 self.repeat = True
+                if debug_repeat:
+                    print(
+                        "[sim-debug] repeat_reason=win_criteria mode={mode} criteria={criteria} "
+                        "target={target} final={final}".format(
+                            mode=self.betmode,
+                            criteria=self.criteria,
+                            target=win_criteria,
+                            final=self.final_win,
+                        ),
+                        flush=True,
+                    )
 
             if self.get_current_distribution_conditions()["force_freegame"] and not (self.triggered_freegame):
                 self.repeat = True
+                if debug_repeat:
+                    print(
+                        "[sim-debug] repeat_reason=force_freegame mode={mode} criteria={criteria}",
+                        flush=True,
+                    )
 
         self.repeat_count += 1
         self.check_current_repeat_count()

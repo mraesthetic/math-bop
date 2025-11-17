@@ -1,3 +1,4 @@
+import os
 import random
 from copy import deepcopy
 from typing import Optional
@@ -302,3 +303,14 @@ class GameStateOverride(GameExecutables):
         win_criteria = self.get_current_betmode_distributions().get_win_criteria()
         if win_criteria is not None and self.final_win != win_criteria:
             self.repeat = True
+            if os.getenv("SIM_DEBUG_PROGRESS", "0") != "0":
+                print(
+                    "[sim-debug] repeat_override mode={mode} criteria={criteria} "
+                    "target={target} final={final}".format(
+                        mode=self.betmode,
+                        criteria=self.criteria,
+                        target=win_criteria,
+                        final=self.final_win,
+                    ),
+                    flush=True,
+                )
