@@ -1,0 +1,247 @@
+{
+    "reveal": {
+        "type": "reveal",
+        "board": [
+            [
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sj"
+                },
+                {
+                    "name": "sc2"
+                }
+            ],
+            [
+                {
+                    "name": "wild",
+                    "wild": true,
+                    "multiplier": 3
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sc2"
+                }
+            ],
+            [
+                {
+                    "name": "wild",
+                    "wild": true,
+                    "multiplier": 5
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sj"
+                }
+            ],
+            [
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sq"
+                }
+            ],
+            [
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sk"
+                }
+            ]
+        ],
+        "paddingPositions": [
+            92,
+            205,
+            13,
+            22,
+            166
+        ],
+        "gameType": "basegame",
+        "anticipation": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "setTotalWin": {
+        "type": "setTotalWin",
+        "amount": 0
+    },
+    "finalWin": {
+        "type": "finalWin",
+        "amount": 0
+    },
+    "winInfo": {
+        "type": "winInfo",
+        "totalWin": 400,
+        "wins": [
+            {
+                "symbol": "sq",
+                "kind": 4,
+                "win": 400,
+                "positions": [
+                    {
+                        "reel": 0,
+                        "row": 4
+                    },
+                    {
+                        "reel": 1,
+                        "row": 4
+                    },
+                    {
+                        "reel": 2,
+                        "row": 4
+                    },
+                    {
+                        "reel": 3,
+                        "row": 4
+                    }
+                ],
+                "meta": {
+                    "lineIndex": 4,
+                    "multiplier": 4,
+                    "winWithoutMult": 100,
+                    "globalMult": 1,
+                    "lineMultiplier": 4
+                }
+            }
+        ]
+    },
+    "setWin": {
+        "type": "setWin",
+        "amount": 400,
+        "winLevel": 4,
+        "betAmount": 100,
+        "multiplier": 4.0
+    },
+    "freeSpinTrigger": {
+        "type": "freeSpinTrigger",
+        "totalFs": 10,
+        "positions": [
+            {
+                "reel": 0,
+                "row": 1
+            },
+            {
+                "reel": 3,
+                "row": 1
+            },
+            {
+                "reel": 4,
+                "row": 4
+            }
+        ]
+    },
+    "updateFreeSpin": {
+        "type": "updateFreeSpin",
+        "amount": 0,
+        "total": 10
+    },
+    "freeSpinRetrigger": {
+        "type": "freeSpinRetrigger",
+        "totalFs": 12,
+        "positions": [
+            {
+                "reel": 0,
+                "row": 1
+            },
+            {
+                "reel": 4,
+                "row": 1
+            }
+        ]
+    },
+    "symbolRemoval": {
+        "type": "symbolRemoval",
+        "removedSymbols": [
+            "s10"
+        ],
+        "initial": false
+    },
+    "symbolRemovalNotice": {
+        "type": "symbolRemovalNotice",
+        "removedSymbol": "s10",
+        "remainingSymbols": [
+            "sj",
+            "sq",
+            "sk",
+            "sa",
+            "sc1",
+            "sc2",
+            "sc3"
+        ],
+        "totalRemoved": 1,
+        "mode": "rocket"
+    },
+    "freeSpinEnd": {
+        "type": "freeSpinEnd",
+        "amount": 177480,
+        "winLevel": 8,
+        "betAmount": 100,
+        "multiplier": 1774.8
+    },
+    "wincap": {
+        "type": "wincap",
+        "amount": 1250000
+    }
+}

@@ -1,0 +1,14 @@
+/mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/deps/serde-6209418f20c6833f.d: /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/build/serde-2bfb92bfee02571d/out/private.rs
+
+/mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/deps/libserde-6209418f20c6833f.rlib: /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/build/serde-2bfb92bfee02571d/out/private.rs
+
+/mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/deps/libserde-6209418f20c6833f.rmeta: /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/build/serde-2bfb92bfee02571d/out/private.rs
+
+/home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/vill/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/build/serde-2bfb92bfee02571d/out/private.rs:
+
+# env-dep:OUT_DIR=/mnt/c/Users/Anthony/Desktop/UNKNOWN/math-sdk/optimization_program/target/release/build/serde-2bfb92bfee02571d/out

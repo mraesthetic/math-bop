@@ -1,0 +1,118 @@
+{
+    "workingName": "Space Dummies",
+    "frontendConfig": {
+        "file": "fe_config.json",
+        "sha256": "84f0ba4204f66003425202e8a049ac6c6b915698ad32cd2943309593f75a1cad"
+    },
+    "gameID": "0_0_space_dummies",
+    "rtp": 96.2,
+    "betDenomination": 1000,
+    "minDenomination": 10,
+    "providerNumber": 0,
+    "standardForceFile": {
+        "file": "force.json",
+        "sha256": "d286b543d475eb573eb04e772c075b50510ce4aafb1db0d643dcfd438314a1e0"
+    },
+    "bookShelfConfig": [
+        {
+            "name": "base",
+            "tables": [
+                {
+                    "file": "lookUpTable_base_0.csv",
+                    "sha256": "0c3bcbb20e666f878fbfb607527c63dad03d6940bc9bd6db0349a84a74025d2f"
+                }
+            ],
+            "cost": 1.0,
+            "rtp": 0.962,
+            "std": 2015.9,
+            "bookLength": 20000,
+            "feature": true,
+            "autoEndRoundDisabled": false,
+            "buyBonus": false,
+            "maxWin": 12500.0,
+            "booksFile": {
+                "file": "books_base.jsonl.zst",
+                "sha256": "e754b9c1bd077d973537033c5316cab8de87ed883018748081cc53ec31e0b93a"
+            },
+            "forceFile": {
+                "file": "force_record_base.json",
+                "sha256": "6838c9e898c08d6e972fe02f0101e248da968effe143d8122373f868ede5a93c"
+            }
+        },
+        {
+            "name": "bonus_hunt",
+            "tables": [
+                {
+                    "file": "lookUpTable_bonus_hunt_0.csv",
+                    "sha256": "116d6e83383f258aabbb767c640c77c9f6fbe7318ac6ba9380f265b43830e0f3"
+                }
+            ],
+            "cost": 3.0,
+            "rtp": 0.962,
+            "std": 1012.39,
+            "bookLength": 20000,
+            "feature": true,
+            "autoEndRoundDisabled": false,
+            "buyBonus": false,
+            "maxWin": 12500.0,
+            "booksFile": {
+                "file": "books_bonus_hunt.jsonl.zst",
+                "sha256": "f239b77993dec19e47ddac412c66a96ccca67d29eee4909990b2ad85c22d905d"
+            },
+            "forceFile": {
+                "file": "force_record_bonus_hunt.json",
+                "sha256": "b5f339dc003fe03b1ca75201525b7692ae10b2d2404a050b0027556e460dfff2"
+            }
+        },
+        {
+            "name": "rocket_buy",
+            "tables": [
+                {
+                    "file": "lookUpTable_rocket_buy_0.csv",
+                    "sha256": "e54f1eafc1ee550543c8ee89d5b6f8cd8bb291df906b7c16ee0172f84d1904b9"
+                }
+            ],
+            "cost": 100.0,
+            "rtp": 0.962,
+            "std": 41.72,
+            "bookLength": 20000,
+            "feature": false,
+            "autoEndRoundDisabled": false,
+            "buyBonus": true,
+            "maxWin": 12500.0,
+            "booksFile": {
+                "file": "books_rocket_buy.jsonl.zst",
+                "sha256": "108ff6cbe694250f20d13b39c3ef066cb4f7fac3d88a89fe1e1fe7e53d70f4bb"
+            },
+            "forceFile": {
+                "file": "force_record_rocket_buy.json",
+                "sha256": "cd318ab693e00e73aed9972e2e4823aff9a3785a7072cbaec301e341762ba95c"
+            }
+        },
+        {
+            "name": "hyper_buy",
+            "tables": [
+                {
+                    "file": "lookUpTable_hyper_buy_0.csv",
+                    "sha256": "26cd88dae1e3148e2b86810f40f2dc14db6ae04239cc494b620998fb3d4a99d9"
+                }
+            ],
+            "cost": 200.0,
+            "rtp": 0.962,
+            "std": 19.85,
+            "bookLength": 20000,
+            "feature": false,
+            "autoEndRoundDisabled": false,
+            "buyBonus": true,
+            "maxWin": 12500.0,
+            "booksFile": {
+                "file": "books_hyper_buy.jsonl.zst",
+                "sha256": "3bdca52348145bed353dadbf65baad94be66d8713091ff39711172fec932081c"
+            },
+            "forceFile": {
+                "file": "force_record_hyper_buy.json",
+                "sha256": "53ed67e4431b0cddd5f022ed87d16f21c91d0d9061cf347c6c3984d5ab552ef9"
+            }
+        }
+    ]
+}
