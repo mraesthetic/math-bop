@@ -1,6 +1,7 @@
 from copy import copy, deepcopy
 from abc import ABC, abstractmethod
 from warnings import warn
+import os
 import random
 
 # from src.config.config import BetMode
@@ -257,12 +258,37 @@ class GeneralGameState(ABC):
         self.library = {}
         self.betmode = betmode
         self.num_sims = num_sims
-        for sim in range(
-            thread_index * num_sims + (total_threads * num_sims) * repeat_count,
-            (thread_index + 1) * num_sims + (total_threads * num_sims) * repeat_count,
-        ):
+        start_sim_id = thread_index * num_sims + (total_threads * num_sims) * repeat_count
+        end_sim_id = (thread_index + 1) * num_sims + (total_threads * num_sims) * repeat_count
+        debug_progress = os.getenv("SIM_DEBUG_PROGRESS", "0") != "0"
+        debug_interval = max(int(os.getenv("SIM_DEBUG_INTERVAL", "500")), 1)
+
+        for sim in range(start_sim_id, end_sim_id):
             self.criteria = sim_to_criteria[sim]
             self.run_spin(sim, simulation_seeds[sim])
+
+            if debug_progress:
+                local_idx = sim - start_sim_id + 1
+                if (
+                    local_idx == 1
+                    or local_idx == num_sims
+                    or local_idx % debug_interval == 0
+                ):
+                    print(
+                        "[sim-debug] mode={mode} thread={thread} repeat={repeat} "
+                        "spin={current}/{total} criteria={criteria} final_win={win:.4f} "
+                        "repeat_flag={repeat_flag}".format(
+                            mode=betmode,
+                            thread=thread_index,
+                            repeat=repeat_count,
+                            current=local_idx,
+                            total=num_sims,
+                            criteria=self.criteria,
+                            win=self.final_win,
+                            repeat_flag=self.repeat,
+                        ),
+                        flush=True,
+                    )
         mode_cost = self.get_current_betmode().get_cost()
 
         print(
@@ -274,12 +300,21 @@ class GeneralGameState(ABC):
             flush=True,
         )
 
-        write_json(
-            self,
-            self.output_files.get_temp_multi_thread_name(
-                betmode, thread_index, repeat_count, (compress) * True + (not compress) * False
-            ),
+        temp_chunk_path = self.output_files.get_temp_multi_thread_name(
+            betmode, thread_index, repeat_count, (compress) * True + (not compress) * False
         )
+        write_json(self, temp_chunk_path)
+        if debug_progress:
+            try:
+                size_bytes = os.path.getsize(temp_chunk_path)
+            except OSError:
+                size_bytes = -1
+            size_msg = f"{size_bytes / (1024 * 1024):.3f} MB" if size_bytes >= 0 else "unknown size"
+            print(
+                f"[sim-debug] chunk_saved mode={betmode} thread={thread_index} repeat={repeat_count} "
+                f"path={temp_chunk_path} size={size_msg}",
+                flush=True,
+            )
         print_recorded_wins(self, self.output_files.get_temp_force_name(betmode, thread_index, repeat_count))
         make_lookup_tables(self, self.output_files.get_temp_lookup_name(betmode, thread_index, repeat_count))
         make_lookup_pay_split(self, self.output_files.get_temp_segmented_name(betmode, thread_index, repeat_count))

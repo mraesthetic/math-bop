@@ -143,6 +143,15 @@ def output_lookup_and_force_files(
                 gamestate.output_files.get_temp_multi_thread_name(betmode, thread, repeat_index, compress)
             )
 
+    missing_chunks = [fname for fname in file_list if not os.path.exists(fname)]
+    if missing_chunks:
+        raise FileNotFoundError(
+            "One or more temp book chunks are missing:\n"
+            + "\n".join(missing_chunks)
+            + "\nEnsure the simulation threads completed successfully. "
+            "You can set SIM_DEBUG_PROGRESS=1 to trace chunk creation."
+        )
+
     if compress:
         temp_book_output_path = os.path.join(gamestate.output_files.book_path, "temp_book_output.json")
         with open(temp_book_output_path, "w", encoding="UTF-8") as outfile:
@@ -150,6 +159,12 @@ def output_lookup_and_force_files(
                 with open(fname, "rb") as infile:
                     decompressed = zstd.ZstdDecompressor().decompress(infile.read())
                     outfile.write(decompressed.decode("UTF-8"))
+                    if os.getenv("SIM_DEBUG_PROGRESS", "0") != "0":
+                        try:
+                            size_mb = os.path.getsize(fname) / (1024 * 1024)
+                        except OSError:
+                            size_mb = 0
+                        print(f"[sim-debug] merging chunk {fname} ({size_mb:.3f} MB)", flush=True)
 
         final_out = gamestate.output_files.get_final_book_name(betmode, True)
         with open(temp_book_output_path, "rb") as f_in, open(final_out, "wb") as f_out:

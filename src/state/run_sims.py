@@ -9,6 +9,7 @@ import shutil
 import asyncio
 from typing import Dict
 from datetime import datetime
+import os
 import psutil
 
 from src.write_data.write_data import output_lookup_and_force_files
@@ -59,6 +60,12 @@ def create_books(
             print(f"   - Requested simulations: {num_sim_args[betmode_name]:,}")
             gamestate.betmode = betmode_name
             nsims = max(num_sim_args[betmode_name], sim_counter)
+            if os.getenv("SIM_DEBUG_PROGRESS", "0") != "0":
+                print(
+                    f"[sim-debug] Preparing mode={betmode_name} temp_path={gamestate.output_files.temp_path} "
+                    f"nsims={nsims} threads={threads} batch={batch_size}",
+                    flush=True,
+                )
             print(f"   [{datetime.now().strftime('%H:%M:%S')}] Starting run_multi_process_sims()...")
             run_multi_process_sims(
                 threads,
