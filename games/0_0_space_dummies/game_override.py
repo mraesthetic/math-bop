@@ -30,6 +30,7 @@ class GameStateOverride(GameExecutables):
         self.sticky_wild_positions = {}
         self.removed_symbols = set()
         self.next_symbol_removal_index = 0
+        self.scatter_disabled = False
 
     def assign_special_sym_function(self):
         self.special_symbol_functions = {
@@ -87,6 +88,7 @@ class GameStateOverride(GameExecutables):
         self.removed_symbols = set()
         self.next_symbol_removal_index = 0
         self.active_reel_weights = None
+        self.scatter_disabled = False
 
     def _replicate_symbols(self, strip: list[str], count: int) -> list[str]:
         """Return `count` replacement symbols sampled from the current strip."""
@@ -123,6 +125,27 @@ class GameStateOverride(GameExecutables):
             self.removed_symbols.add(symbol_name)
         return removed_any
 
+    def _purge_symbol_from_bonus_reels(self, symbol_name: str) -> None:
+        """Completely remove a symbol (e.g., scatter) from all bonus reel strips."""
+        for reel_id in self.bonus_reel_maps:
+            for reel_index, reel_strip in enumerate(self.bonus_reel_maps[reel_id]):
+                if symbol_name not in reel_strip:
+                    continue
+                filtered_strip = [sym for sym in reel_strip if sym != symbol_name]
+                if not filtered_strip:
+                    raise RuntimeError(f"Removing '{symbol_name}' exhausted reel {reel_index} in {reel_id}.")
+                replacements = self._replicate_symbols(filtered_strip, len(reel_strip) - len(filtered_strip))
+                new_strip = filtered_strip + replacements
+                random.shuffle(new_strip)
+                self.bonus_reel_maps[reel_id][reel_index] = new_strip
+
+    def _disable_future_scatter_triggers(self) -> None:
+        """Prevent additional scatter retriggers once all removals are complete."""
+        if self.scatter_disabled:
+            return
+        self._purge_symbol_from_bonus_reels("scatter")
+        self.scatter_disabled = True
+
     def remove_next_symbol_in_queue(self) -> Optional[str]:
         """Remove the next symbol in the configured hierarchy."""
         while self.next_symbol_removal_index < len(self.config.symbol_removal_order):
@@ -132,6 +155,8 @@ class GameStateOverride(GameExecutables):
                 continue
             removed = self._remove_symbol_from_bonus_reels(target_symbol)
             if removed:
+                if len(self.removed_symbols) >= len(self.config.symbol_removal_order):
+                    self._disable_future_scatter_triggers()
                 return target_symbol
         return None
 
@@ -265,18 +290,28 @@ class GameStateOverride(GameExecutables):
 
     def process_edge_scatter_removal(self) -> Optional[str]:
         """Check for Scatter on reels 1 and 5, award spins and remove symbols if needed."""
+        if self.scatter_disabled:
+            return None
+
         scatter_positions = self.special_syms_on_board.get("scatter", [])
         has_left = any(pos["reel"] == 0 for pos in scatter_positions)
         has_right = any(pos["reel"] == self.config.num_reels - 1 for pos in scatter_positions)
         if not (has_left and has_right):
             return None
 
-        # +2 free spins per spec
+        removed_symbol = self.remove_next_symbol_in_queue()
+        if removed_symbol is None:
+            if len(self.removed_symbols) >= len(self.config.symbol_removal_order):
+                self._disable_future_scatter_triggers()
+            return None
+
+        # +2 free spins per spec (only while removals remain)
         self.tot_fs += 2
         fs_trigger_event(self, freegame_trigger=True, basegame_trigger=False)
-        removed_symbol = self.remove_next_symbol_in_queue()
-        if removed_symbol:
-            self._emit_symbol_removal_events(removed_symbol=removed_symbol)
+        self._emit_symbol_removal_events(removed_symbol=removed_symbol)
+
+        if len(self.removed_symbols) >= len(self.config.symbol_removal_order):
+            self._disable_future_scatter_triggers()
         return removed_symbol
 
     def _emit_symbol_removal_events(self, removed_symbol: Optional[str] = None, initial: bool = False):
