@@ -17,11 +17,11 @@ class GameState(GameStateOverride):
             attempt += 1
             if debug_spin and (attempt == 1 or attempt % attempt_interval == 0):
                 print(
-                    "[sim-debug] spin_attempt mode={mode} criteria={criteria} attempt={attempt} "
+                    "[sim-debug] spin_attempt mode={mode} criteria={criteria} attempt={attempt_count} "
                     "betmode={betmode} seed={seed}".format(
                         mode=self.betmode,
                         criteria=self.criteria,
-                        attempt=attempt,
+                        attempt_count=attempt,
                         betmode=self.betmode,
                         seed=simulation_seed,
                     ),
@@ -43,11 +43,11 @@ class GameState(GameStateOverride):
             self.check_repeat()
             if debug_spin and not self.repeat:
                 print(
-                    "[sim-debug] spin_resolved mode={mode} criteria={criteria} attempts={attempt} "
+                    "[sim-debug] spin_resolved mode={mode} criteria={criteria} attempts={attempt_count} "
                     "final_win={win:.4f} triggered_fg={fg}".format(
                         mode=self.betmode,
                         criteria=self.criteria,
-                        attempts=attempt,
+                        attempt_count=attempt,
                         win=self.final_win,
                         fg=self.triggered_freegame,
                     ),
