@@ -238,7 +238,15 @@ class GeneralGameState(ABC):
                     )
 
         self.repeat_count += 1
-        self.check_current_repeat_count()
+        max_repeats = 500
+        if getattr(self, "criteria", "") == "wincap":
+            max_repeats = int(os.getenv("SIM_DEBUG_WINCAP_REPEAT_MAX", "50000"))
+        if self.repeat_count % max_repeats == 0:
+            warn(
+                "\nHigh repeat count:\n Current Count: {}\n Criteria: {}\n Simulation: {}\n".format(
+                    self.repeat_count, self.criteria, self.sim + 1
+                )
+            )
 
     @abstractmethod
     def run_spin(self, sim, simulation_seed):
