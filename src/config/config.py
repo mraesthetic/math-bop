@@ -54,7 +54,20 @@ class Config:
         self.opt_params = {None: None}
 
         # Define win-levels for each game-mode, returned during win information events
-        self.win_levels = {
+        self.refresh_win_levels()
+        print("[Config] Using win level map:", self.win_levels)
+        self.base_spin_cost = 1.0
+        self.betmode_spin_cost_overrides = {}
+
+    def get_win_level(self, win_amount: float, winlevel_key: str) -> int:
+        levels = self.win_levels[winlevel_key]
+        for idx, pair in levels.items():
+            if win_amount >= pair[0] and win_amount < pair[1]:
+                return idx
+        return RuntimeError(f"winLevel not found: {win_amount}")
+
+    def _build_win_levels(self) -> dict:
+        return {
             "standard": {
                 1: (0, 0.1),
                 2: (0.1, 1.0),
@@ -63,8 +76,8 @@ class Config:
                 5: (5.0, 30.0),
                 6: (30.0, 50.0),
                 7: (50.0, 100.0),
-                8: (100.0, 200.0),
-                9: (200.0, self.wincap),
+                8: (100.0, 1000.0),
+                9: (1000.0, self.wincap),
                 10: (self.wincap, float("inf")),
             },
             "endFeature": {
@@ -81,12 +94,53 @@ class Config:
             },
         }
 
-    def get_win_level(self, win_amount: float, winlevel_key: str) -> int:
-        levels = self.win_levels[winlevel_key]
-        for idx, pair in levels.items():
-            if win_amount >= pair[0] and win_amount < pair[1]:
-                return idx
-        return RuntimeError(f"winLevel not found: {win_amount}")
+    def refresh_win_levels(self) -> None:
+        """Rebuild win-level ranges after updating configuration values like wincap."""
+        self.win_levels = self._build_win_levels()
+
+    def get_spin_bet_cost(self, betmode) -> float:
+        """Return the effective per-spin bet cost for a given betmode."""
+        name = betmode.get_name()
+        if name in getattr(self, "betmode_spin_cost_overrides", {}):
+            return self.betmode_spin_cost_overrides[name]
+        if betmode.get_buybonus():
+            return getattr(self, "base_spin_cost", betmode.get_cost())
+        return betmode.get_cost()
+
+    def _sanity_check_basics(self) -> None:
+        """Assert critical config expectations to avoid silent regressions."""
+        standard_levels = self.win_levels.get("standard", {})
+        level_nine = standard_levels.get(9)
+        level_ten = standard_levels.get(10)
+        assert (
+            level_nine is not None and level_ten is not None
+        ), "Standard win level map must include entries for levels 9 and 10."
+        assert (
+            level_nine[1] == self.wincap
+        ), "Level 9 upper bound should match current wincap."
+        assert (
+            level_ten[0] == self.wincap
+        ), "Level 10 lower bound should match current wincap."
+
+        assert self.base_spin_cost > 0, "Base spin cost must be > 0."
+        for betmode in self.bet_modes:
+            spin_cost = self.get_spin_bet_cost(betmode)
+            assert spin_cost > 0, f"Spin cost must be > 0 for betmode {betmode.get_name()}."
+
+        removal_set = set(self.symbol_removal_order)
+        assert len(removal_set) == len(self.symbol_removal_order), "Symbol removal order contains duplicates."
+        assert removal_set.issubset(
+            self.all_valid_sym_names
+        ), "Symbol removal order references unknown symbols."
+
+        assert self.basegame_type in self.freespin_triggers, "Basegame freespin triggers missing."
+        assert self.freegame_type in self.freespin_triggers, "Freegame freespin triggers missing."
+        assert (
+            3 in self.freespin_triggers[self.basegame_type]
+        ), "Basegame triggers must include 3-scatter entry."
+        assert (
+            2 in self.freespin_triggers[self.freegame_type]
+        ), "Freegame triggers must include retrigger mapping."
 
     def get_special_symbol_names(self) -> None:
         """Get names of all special symbols"""

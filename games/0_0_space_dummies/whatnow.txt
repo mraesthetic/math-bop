@@ -1,0 +1,5 @@
+What to do now
+Review hit rates / RTP per mode: open library/analysis/analysis_base.csv, analysis_bonus_hunt.csv, etc. to confirm the base vs free-spin contribution matches the targets (Bonus Hunt scatters should be roughly 3× the base frequency, buys should sit near 96.2 % once weighted by their costs).
+Adjust distribution quotas if needed: if, for example, Bonus Hunt only doubles the free-spin frequency, bump the Distribution(... quota=...) values in game_config.py and rerun.
+Check lookup weights: optimization wrote lookUpTable_<mode>_0.csv; inspect the weighted RTP (third column × probability) to ensure each mode is balancing to 0.962. If one is off, tweak the optimization conditions or rerun with more sims.
+Let me know which stats you want me to dig into first (e.g., Bonus Hunt free-spin rate, buy-mode RTP), and I’ll pull them from the generated analysis files.

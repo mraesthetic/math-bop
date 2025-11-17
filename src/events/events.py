@@ -80,6 +80,9 @@ def fs_trigger_event(
 def set_win_event(gamestate, winlevel_key: str = "standard"):
     """Used for updating cumulative win ticker (for a single outcome)."""
     if not gamestate.wincap_triggered:
+        bet_cost = gamestate.config.get_spin_bet_cost(gamestate.get_current_betmode())
+        bet_amount_cents = int(round(bet_cost * 100, 0))
+        current_mult = round(gamestate.win_manager.spin_win, 4)
         event = {
             "index": len(gamestate.book.events),
             "type": EventConstants.SET_WIN.value,
@@ -90,6 +93,8 @@ def set_win_event(gamestate, winlevel_key: str = "standard"):
                 )
             ),
             "winLevel": gamestate.config.get_win_level(gamestate.win_manager.spin_win, winlevel_key),
+            "betAmount": bet_amount_cents,
+            "multiplier": current_mult,
         }
         gamestate.book.add_event(event)
 
@@ -260,11 +265,16 @@ def update_freespin_event(gamestate):
 
 def freespin_end_event(gamestate, winlevel_key="endFeature"):
     """End of feature trigger."""
+    bet_cost = gamestate.config.get_spin_bet_cost(gamestate.get_current_betmode())
+    bet_amount_cents = int(round(bet_cost * 100, 0))
+    current_mult = round(gamestate.win_manager.freegame_wins, 4)
     event = {
         "index": len(gamestate.book.events),
         "type": EventConstants.FREE_SPIN_END.value,
         "amount": int(min(gamestate.win_manager.freegame_wins, gamestate.config.wincap) * 100),
         "winLevel": gamestate.config.get_win_level(gamestate.win_manager.freegame_wins, winlevel_key),
+        "betAmount": bet_amount_cents,
+        "multiplier": current_mult,
     }
     gamestate.book.add_event(event)
 

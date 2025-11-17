@@ -87,17 +87,37 @@ class GameStateOverride(GameExecutables):
         self.next_symbol_removal_index = 0
         self.active_reel_weights = None
 
+    def _replicate_symbols(self, strip: list[str], count: int) -> list[str]:
+        """Return `count` replacement symbols sampled from the current strip."""
+        if not strip:
+            return []
+        return [random.choice(strip) for _ in range(count)]
+
     def _remove_symbol_from_bonus_reels(self, symbol_name: str) -> bool:
         """Remove a symbol from all bonus reel copies; returns True if anything changed."""
         removed_any = False
         for reel_id in self.bonus_reel_maps:
             for reel_index, reel_strip in enumerate(self.bonus_reel_maps[reel_id]):
+                if symbol_name not in reel_strip:
+                    continue
+
                 filtered_strip = [sym for sym in reel_strip if sym != symbol_name]
-                if len(filtered_strip) != len(reel_strip):
-                    removed_any = True
-                    self.bonus_reel_maps[reel_id][reel_index] = filtered_strip
-                if len(self.bonus_reel_maps[reel_id][reel_index]) == 0:
+                removed_count = len(reel_strip) - len(filtered_strip)
+                if removed_count == 0:
+                    continue
+
+                if len(filtered_strip) == 0:
                     raise RuntimeError(f"Symbol removal '{symbol_name}' exhausted reel {reel_index} in {reel_id}.")
+
+                replacements = self._replicate_symbols(filtered_strip, removed_count)
+                if len(replacements) < removed_count:
+                    raise RuntimeError(f"Unable to backfill removed symbols for reel {reel_index} in {reel_id}.")
+
+                new_strip = filtered_strip + replacements
+                random.shuffle(new_strip)
+                self.bonus_reel_maps[reel_id][reel_index] = new_strip
+                removed_any = True
+
         if removed_any:
             self.removed_symbols.add(symbol_name)
         return removed_any

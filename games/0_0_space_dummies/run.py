@@ -9,6 +9,7 @@ from game_config import GameConfig
 from game_optimization import OptimizationSetup
 from optimization_program.run_script import OptimizationExecution
 from utils.game_analytics.run_analysis import create_stat_sheet
+from utils.validation.reel_validator import validate_reels_for_game
 from utils.rgs_verification import execute_all_tests
 from src.state.run_sims import create_books
 from src.write_data.write_configs import generate_configs
@@ -83,6 +84,7 @@ if __name__ == "__main__":
     target_modes = list(num_sim_args.keys())
 
     config = GameConfig()
+    validate_reels_for_game(config)
     gamestate = GameState(config)
     if run_conditions["run_optimization"]:
         optimization_setup_class = OptimizationSetup(config)
