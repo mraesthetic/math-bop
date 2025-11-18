@@ -81,10 +81,10 @@ if __name__ == "__main__":
     }
 
     run_conditions = {
-        "run_sims": True,
-        "run_optimization": not fast_sim,
-        "run_analysis": (FAST_SIM_ANALYSIS or not fast_sim),
-        "run_format_checks": not fast_sim,
+        "run_sims": os.getenv("RUN_SIMS", "1") != "0",
+        "run_optimization": os.getenv("RUN_OPTIMIZATION", "1" if not fast_sim else "0") != "0",
+        "run_analysis": os.getenv("RUN_ANALYSIS", "1" if (FAST_SIM_ANALYSIS or not fast_sim) else "0") != "0",
+        "run_format_checks": os.getenv("RUN_FORMAT_CHECKS", "1" if not fast_sim else "0") != "0",
     }
     target_modes = list(num_sim_args.keys())
 

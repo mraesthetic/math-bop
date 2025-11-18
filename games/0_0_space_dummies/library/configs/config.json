@@ -2,7 +2,7 @@
     "workingName": "Space Dummies",
     "frontendConfig": {
         "file": "fe_config.json",
-        "sha256": "84f0ba4204f66003425202e8a049ac6c6b915698ad32cd2943309593f75a1cad"
+        "sha256": "3af5574d6de8a1d6f64797238c4fa3e46f7c9eefa09c46445cda795fea80c667"
     },
     "gameID": "0_0_space_dummies",
     "rtp": 96.2,
@@ -11,7 +11,7 @@
     "providerNumber": 0,
     "standardForceFile": {
         "file": "force.json",
-        "sha256": "d286b543d475eb573eb04e772c075b50510ce4aafb1db0d643dcfd438314a1e0"
+        "sha256": "5126d688ccc577e11d78feddda66dbfa5fa2d233a84616ef327f70f0553e25bb"
     },
     "bookShelfConfig": [
         {
@@ -19,24 +19,24 @@
             "tables": [
                 {
                     "file": "lookUpTable_base_0.csv",
-                    "sha256": "0c3bcbb20e666f878fbfb607527c63dad03d6940bc9bd6db0349a84a74025d2f"
+                    "sha256": "571993666291635ff26924eb40af37e37399e08bf8b79890b325c143e08770f8"
                 }
             ],
             "cost": 1.0,
             "rtp": 0.962,
-            "std": 2015.9,
-            "bookLength": 20000,
+            "std": 1553.85,
+            "bookLength": 9996,
             "feature": true,
             "autoEndRoundDisabled": false,
             "buyBonus": false,
             "maxWin": 12500.0,
             "booksFile": {
                 "file": "books_base.jsonl.zst",
-                "sha256": "e754b9c1bd077d973537033c5316cab8de87ed883018748081cc53ec31e0b93a"
+                "sha256": "23bf7a2d96a1164683cbada007894354d7be3ab9a5004fb182387c01236af4c8"
             },
             "forceFile": {
                 "file": "force_record_base.json",
-                "sha256": "6838c9e898c08d6e972fe02f0101e248da968effe143d8122373f868ede5a93c"
+                "sha256": "d79755af581b4d09c8adc11a9cbf811a1a93a07a971af568e247c6060ae5b7d5"
             }
         },
         {
@@ -44,24 +44,24 @@
             "tables": [
                 {
                     "file": "lookUpTable_bonus_hunt_0.csv",
-                    "sha256": "116d6e83383f258aabbb767c640c77c9f6fbe7318ac6ba9380f265b43830e0f3"
+                    "sha256": "550356687fe444ea5a2d9a8f9d94a35385b13183375a7be90f11f7020e4f8797"
                 }
             ],
             "cost": 3.0,
             "rtp": 0.962,
-            "std": 1012.39,
-            "bookLength": 20000,
+            "std": 736.97,
+            "bookLength": 9996,
             "feature": true,
             "autoEndRoundDisabled": false,
             "buyBonus": false,
             "maxWin": 12500.0,
             "booksFile": {
                 "file": "books_bonus_hunt.jsonl.zst",
-                "sha256": "f239b77993dec19e47ddac412c66a96ccca67d29eee4909990b2ad85c22d905d"
+                "sha256": "6f7592b31807d14a2c60f057d4d628f9d6491e80cf5f1666add195683630cc7e"
             },
             "forceFile": {
                 "file": "force_record_bonus_hunt.json",
-                "sha256": "b5f339dc003fe03b1ca75201525b7692ae10b2d2404a050b0027556e460dfff2"
+                "sha256": "c0b5c8e0739b55a58ab852058d273a464c2f8090b806fdfbe1070d5d65d22c9e"
             }
         },
         {
@@ -69,24 +69,24 @@
             "tables": [
                 {
                     "file": "lookUpTable_rocket_buy_0.csv",
-                    "sha256": "e54f1eafc1ee550543c8ee89d5b6f8cd8bb291df906b7c16ee0172f84d1904b9"
+                    "sha256": "9d7eaddafbb954620f33e9667bfce0fc3dff4784be594b60d5b95bedc4836941"
                 }
             ],
             "cost": 100.0,
             "rtp": 0.962,
-            "std": 41.72,
-            "bookLength": 20000,
+            "std": 26.27,
+            "bookLength": 9996,
             "feature": false,
             "autoEndRoundDisabled": false,
             "buyBonus": true,
             "maxWin": 12500.0,
             "booksFile": {
                 "file": "books_rocket_buy.jsonl.zst",
-                "sha256": "108ff6cbe694250f20d13b39c3ef066cb4f7fac3d88a89fe1e1fe7e53d70f4bb"
+                "sha256": "e04e629a58b4e720c0bd89c58b46d7c44dfe527254c5cc78155150b2edc8c99b"
             },
             "forceFile": {
                 "file": "force_record_rocket_buy.json",
-                "sha256": "cd318ab693e00e73aed9972e2e4823aff9a3785a7072cbaec301e341762ba95c"
+                "sha256": "f31d576edbe4fd6d3b1b93c0fbab25058d3acad8ab3a5ebe7afe56fc7846ec43"
             }
         },
         {
@@ -94,24 +94,24 @@
             "tables": [
                 {
                     "file": "lookUpTable_hyper_buy_0.csv",
-                    "sha256": "26cd88dae1e3148e2b86810f40f2dc14db6ae04239cc494b620998fb3d4a99d9"
+                    "sha256": "5d74f87635c2b81138a62084684af173ca9c2f6b53ee901f32c4bba25fb1603f"
                 }
             ],
             "cost": 200.0,
             "rtp": 0.962,
-            "std": 19.85,
-            "bookLength": 20000,
+            "std": 5.95,
+            "bookLength": 9996,
             "feature": false,
             "autoEndRoundDisabled": false,
             "buyBonus": true,
             "maxWin": 12500.0,
             "booksFile": {
                 "file": "books_hyper_buy.jsonl.zst",
-                "sha256": "3bdca52348145bed353dadbf65baad94be66d8713091ff39711172fec932081c"
+                "sha256": "8fea878113bad47ba2d3d2e219ca35000d4b5d14ac66c717b91ac1d69a52cf25"
             },
             "forceFile": {
                 "file": "force_record_hyper_buy.json",
-                "sha256": "53ed67e4431b0cddd5f022ed87d16f21c91d0d9061cf347c6c3984d5ab552ef9"
+                "sha256": "2700c28cedb3722aeb6178f1cadc7af468c170ea583e87a780779c17a850f45b"
             }
         }
     ]

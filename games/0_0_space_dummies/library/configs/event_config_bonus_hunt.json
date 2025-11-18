@@ -7,19 +7,42 @@
                     "name": "s10"
                 },
                 {
+                    "name": "sj"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sk"
+                },
+                {
                     "name": "sa"
                 },
                 {
-                    "name": "chip"
+                    "name": "sc1"
+                }
+            ],
+            [
+                {
+                    "name": "wild",
+                    "wild": true,
+                    "multiplier": 3
                 },
                 {
-                    "name": "zog"
+                    "name": "sk"
                 },
                 {
-                    "name": "sc3"
+                    "name": "sa"
                 },
                 {
-                    "name": "s10"
+                    "name": "scatter",
+                    "scatter": true
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sq"
                 }
             ],
             [
@@ -27,19 +50,45 @@
                     "name": "sk"
                 },
                 {
+                    "name": "sc1"
+                },
+                {
+                    "name": "scatter",
+                    "scatter": true
+                },
+                {
+                    "name": "sc3"
+                },
+                {
                     "name": "chip"
+                },
+                {
+                    "name": "zog"
+                }
+            ],
+            [
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "wild",
+                    "wild": true,
+                    "multiplier": 5
                 },
                 {
                     "name": "sk"
                 },
                 {
-                    "name": "chip"
+                    "name": "sa"
                 },
                 {
-                    "name": "sc1"
+                    "name": "wild",
+                    "wild": true,
+                    "multiplier": 3
                 },
                 {
-                    "name": "sc3"
+                    "name": "scatter",
+                    "scatter": true
                 }
             ],
             [
@@ -48,58 +97,16 @@
                     "scatter": true
                 },
                 {
-                    "name": "wild",
-                    "wild": true,
-                    "multiplier": 2
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                }
-            ],
-            [
-                {
                     "name": "sc2"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
                     "name": "sc3"
                 },
                 {
                     "name": "sq"
-                }
-            ],
-            [
-                {
-                    "name": "sj"
                 },
                 {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
+                    "name": "sa"
                 },
                 {
                     "name": "chip"
@@ -107,29 +114,67 @@
             ]
         ],
         "paddingPositions": [
-            38,
-            150,
-            40,
-            178,
-            26
+            31,
+            18,
+            24,
+            3,
+            4
         ],
         "gameType": "basegame",
         "anticipation": [
             0,
             0,
             0,
-            0,
-            0
+            1,
+            2
         ]
+    },
+    "setTotalWin": {
+        "type": "setTotalWin",
+        "amount": 0
+    },
+    "finalWin": {
+        "type": "finalWin",
+        "amount": 0
     },
     "winInfo": {
         "type": "winInfo",
-        "totalWin": 300,
+        "totalWin": 9000,
         "wins": [
             {
-                "symbol": "chip",
-                "kind": 3,
-                "win": 300,
+                "symbol": "sa",
+                "kind": 4,
+                "win": 1800,
+                "positions": [
+                    {
+                        "reel": 0,
+                        "row": 4
+                    },
+                    {
+                        "reel": 1,
+                        "row": 3
+                    },
+                    {
+                        "reel": 2,
+                        "row": 4
+                    },
+                    {
+                        "reel": 3,
+                        "row": 3
+                    }
+                ],
+                "meta": {
+                    "lineIndex": 8,
+                    "multiplier": 9,
+                    "winWithoutMult": 200,
+                    "globalMult": 1,
+                    "lineMultiplier": 9
+                }
+            },
+            {
+                "symbol": "sc2",
+                "kind": 5,
+                "win": 7200,
                 "positions": [
                     {
                         "reel": 0,
@@ -142,48 +187,48 @@
                     {
                         "reel": 2,
                         "row": 4
+                    },
+                    {
+                        "reel": 3,
+                        "row": 3
+                    },
+                    {
+                        "reel": 4,
+                        "row": 2
                     }
                 ],
                 "meta": {
                     "lineIndex": 13,
-                    "multiplier": 1,
-                    "winWithoutMult": 300,
+                    "multiplier": 9,
+                    "winWithoutMult": 800,
                     "globalMult": 1,
-                    "lineMultiplier": 1
+                    "lineMultiplier": 9
                 }
             }
         ]
     },
     "setWin": {
         "type": "setWin",
-        "amount": 300,
-        "winLevel": 4,
-        "betAmount": 100,
-        "multiplier": 3.0
-    },
-    "setTotalWin": {
-        "type": "setTotalWin",
-        "amount": 300
-    },
-    "finalWin": {
-        "type": "finalWin",
-        "amount": 300
+        "amount": 9000,
+        "winLevel": 7,
+        "betAmount": 300,
+        "multiplier": 90.0
     },
     "freeSpinTrigger": {
         "type": "freeSpinTrigger",
         "totalFs": 10,
         "positions": [
             {
-                "reel": 0,
+                "reel": 1,
                 "row": 4
             },
             {
-                "reel": 2,
-                "row": 3
+                "reel": 3,
+                "row": 4
             },
             {
                 "reel": 4,
-                "row": 2
+                "row": 1
             }
         ]
     },
@@ -192,24 +237,17 @@
         "amount": 0,
         "total": 10
     },
-    "freeSpinEnd": {
-        "type": "freeSpinEnd",
-        "amount": 60220,
-        "winLevel": 8,
-        "betAmount": 100,
-        "multiplier": 602.2
-    },
     "freeSpinRetrigger": {
         "type": "freeSpinRetrigger",
         "totalFs": 12,
         "positions": [
             {
                 "reel": 0,
-                "row": 2
+                "row": 4
             },
             {
                 "reel": 4,
-                "row": 3
+                "row": 4
             }
         ]
     },
@@ -234,6 +272,13 @@
         ],
         "totalRemoved": 1,
         "mode": "rocket"
+    },
+    "freeSpinEnd": {
+        "type": "freeSpinEnd",
+        "amount": 306860,
+        "winLevel": 9,
+        "betAmount": 300,
+        "multiplier": 3068.6
     },
     "wincap": {
         "type": "wincap",

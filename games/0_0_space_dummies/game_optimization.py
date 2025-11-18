@@ -34,12 +34,12 @@ class OptimizationSetup:
         ).return_dict()
 
         base_parameters = ConstructParameters(
-            num_show=5000,
-            num_per_fence=10000,
+            num_show=750,
+            num_per_fence=1500,
             min_m2m=4,
             max_m2m=8,
             pmb_rtp=1.0,
-            sim_trials=5000,
+            sim_trials=750,
             test_spins=[50, 100, 200],
             test_weights=[0.3, 0.4, 0.3],
             score_type="rtp",
@@ -56,12 +56,12 @@ class OptimizationSetup:
         ).return_dict()
 
         bonus_parameters = ConstructParameters(
-            num_show=5000,
-            num_per_fence=10000,
+            num_show=750,
+            num_per_fence=1500,
             min_m2m=4,
             max_m2m=8,
             pmb_rtp=1.0,
-            sim_trials=5000,
+            sim_trials=750,
             test_spins=[10, 20, 50],
             test_weights=[0.6, 0.2, 0.2],
             score_type="rtp",

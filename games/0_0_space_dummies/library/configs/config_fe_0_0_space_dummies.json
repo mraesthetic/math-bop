@@ -185,6 +185,21 @@
     },
     "symbols": [
         {
+            "sa": {
+                "paytable": [
+                    {
+                        "5": 5.0
+                    },
+                    {
+                        "4": 2.0
+                    },
+                    {
+                        "3": 0.4
+                    }
+                ]
+            }
+        },
+        {
             "sc1": {
                 "paytable": [
                     {
@@ -195,6 +210,60 @@
                     },
                     {
                         "3": 1.0
+                    }
+                ]
+            }
+        },
+        {
+            "zog": {
+                "paytable": [
+                    {
+                        "5": 100.0
+                    },
+                    {
+                        "4": 20.0
+                    },
+                    {
+                        "3": 4.0
+                    }
+                ]
+            }
+        },
+        {
+            "wild": {
+                "paytable": null,
+                "special_properties": [
+                    "wild",
+                    "multiplier"
+                ]
+            }
+        },
+        {
+            "sq": {
+                "paytable": [
+                    {
+                        "5": 3.0
+                    },
+                    {
+                        "4": 1.0
+                    },
+                    {
+                        "3": 0.2
+                    }
+                ]
+            }
+        },
+        {
+            "sk": {
+                "paytable": [
+                    {
+                        "5": 4.0
+                    },
+                    {
+                        "4": 1.4
+                    },
+                    {
+                        "3": 0.4
                     }
                 ]
             }
@@ -230,61 +299,16 @@
             }
         },
         {
-            "sq": {
+            "s10": {
                 "paytable": [
                     {
-                        "5": 3.0
+                        "5": 2.0
                     },
                     {
-                        "4": 1.0
+                        "4": 0.6
                     },
                     {
                         "3": 0.2
-                    }
-                ]
-            }
-        },
-        {
-            "sj": {
-                "paytable": [
-                    {
-                        "5": 2.4
-                    },
-                    {
-                        "4": 0.8
-                    },
-                    {
-                        "3": 0.2
-                    }
-                ]
-            }
-        },
-        {
-            "sa": {
-                "paytable": [
-                    {
-                        "5": 5.0
-                    },
-                    {
-                        "4": 2.0
-                    },
-                    {
-                        "3": 0.4
-                    }
-                ]
-            }
-        },
-        {
-            "sk": {
-                "paytable": [
-                    {
-                        "5": 4.0
-                    },
-                    {
-                        "4": 1.4
-                    },
-                    {
-                        "3": 0.4
                     }
                 ]
             }
@@ -305,36 +329,13 @@
             }
         },
         {
-            "scatter": {
-                "paytable": null,
-                "special_properties": [
-                    "scatter"
-                ]
-            }
-        },
-        {
-            "zog": {
+            "sj": {
                 "paytable": [
                     {
-                        "5": 100.0
+                        "5": 2.4
                     },
                     {
-                        "4": 20.0
-                    },
-                    {
-                        "3": 4.0
-                    }
-                ]
-            }
-        },
-        {
-            "s10": {
-                "paytable": [
-                    {
-                        "5": 2.0
-                    },
-                    {
-                        "4": 0.6
+                        "4": 0.8
                     },
                     {
                         "3": 0.2
@@ -343,11 +344,10 @@
             }
         },
         {
-            "wild": {
+            "scatter": {
                 "paytable": null,
                 "special_properties": [
-                    "wild",
-                    "multiplier"
+                    "scatter"
                 ]
             }
         }
@@ -356,223 +356,10 @@
         "basegame": [
             [
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "s10"
                 },
                 {
                     "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
                 },
                 {
                     "name": "sq"
@@ -581,76 +368,10 @@
                     "name": "sk"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
+                    "name": "sa"
                 },
                 {
                     "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
                 },
                 {
                     "name": "sc2"
@@ -662,157 +383,22 @@
                     "name": "sa"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "chip"
-                },
-                {
                     "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
                 },
                 {
                     "name": "s10"
                 },
                 {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
                     "name": "sj"
                 },
                 {
                     "name": "sq"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
                 },
                 {
                     "name": "sc1"
@@ -824,10 +410,28 @@
                     "name": "sc3"
                 },
                 {
-                    "name": "sc3"
+                    "name": "sa"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "s10"
+                },
+                {
+                    "name": "sj"
+                },
+                {
+                    "name": "sq"
                 },
                 {
                     "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc1"
                 },
                 {
                     "name": "sc2"
@@ -836,46 +440,34 @@
                     "name": "sc3"
                 },
                 {
+                    "name": "sa"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "s10"
+                },
+                {
+                    "name": "sj"
+                },
+                {
+                    "name": "sq"
+                },
+                {
                     "name": "sk"
                 },
                 {
-                    "name": "sc3"
+                    "name": "sa"
+                },
+                {
+                    "name": "sc1"
                 },
                 {
                     "name": "sc2"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
+                    "name": "sc3"
                 },
                 {
                     "name": "sa"
@@ -884,58 +476,13 @@
                     "name": "sq"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "s10"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
                     "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
                 },
                 {
                     "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
                 },
                 {
                     "name": "sk"
@@ -944,174 +491,27 @@
                     "name": "sa"
                 },
                 {
-                    "name": "sk"
+                    "name": "sc1"
                 },
                 {
                     "name": "sc2"
                 },
                 {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
                 }
             ],
             [
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
+                    "name": "s10"
                 },
                 {
                     "name": "sj"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "wild"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
                     "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
                 },
                 {
                     "name": "scatter"
@@ -1120,316 +520,37 @@
                     "name": "sc3"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
                     "name": "sk"
+                },
+                {
+                    "name": "sa"
                 },
                 {
                     "name": "chip"
                 },
                 {
-                    "name": "zog"
+                    "name": "sc2"
                 },
                 {
                     "name": "sq"
                 },
                 {
-                    "name": "chip"
+                    "name": "sc1"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
+                    "name": "scatter"
                 },
                 {
                     "name": "sj"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
                     "name": "sq"
                 },
                 {
                     "name": "sc1"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
                     "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
                 },
                 {
                     "name": "wild"
@@ -1438,220 +559,7 @@
                     "name": "sk"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
                     "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
                 },
                 {
                     "name": "scatter"
@@ -1660,19 +568,225 @@
                     "name": "sc2"
                 },
                 {
-                    "name": "sj"
+                    "name": "sq"
                 },
                 {
-                    "name": "sk"
+                    "name": "sc1"
+                },
+                {
+                    "name": "s10"
+                },
+                {
+                    "name": "sj"
                 },
                 {
                     "name": "sq"
                 },
                 {
+                    "name": "sc1"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sk"
+                },
+                {
                     "name": "sa"
                 },
                 {
+                    "name": "chip"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
                     "name": "sj"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sc1"
+                }
+            ],
+            [
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "zog"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "zog"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "zog"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "zog"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "wild"
                 },
                 {
                     "name": "sk"
@@ -1683,433 +797,19 @@
                     "name": "sc2"
                 },
                 {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sc3"
                 },
                 {
-                    "name": "sc3"
+                    "name": "chip"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
                 },
                 {
                     "name": "wild"
@@ -2118,61 +818,55 @@
                     "name": "scatter"
                 },
                 {
+                    "name": "chip"
+                },
+                {
                     "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
                 },
                 {
                     "name": "wild"
                 },
                 {
                     "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
                 },
                 {
                     "name": "sq"
                 },
                 {
-                    "name": "sc1"
+                    "name": "wild"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sa"
                 },
                 {
                     "name": "sc2"
                 },
                 {
+                    "name": "sc3"
+                },
+                {
                     "name": "chip"
                 },
                 {
-                    "name": "sc1"
+                    "name": "scatter"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
                 },
                 {
                     "name": "sa"
@@ -2182,6 +876,9 @@
                 },
                 {
                     "name": "sc2"
+                },
+                {
+                    "name": "sq"
                 },
                 {
                     "name": "wild"
@@ -2193,52 +890,19 @@
                     "name": "scatter"
                 },
                 {
+                    "name": "sc2"
+                },
+                {
                     "name": "sc3"
                 },
                 {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "chip"
                 },
                 {
-                    "name": "chip"
+                    "name": "wild"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
@@ -2247,956 +911,39 @@
                     "name": "wild"
                 },
                 {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sa"
+                },
+                {
                     "name": "wild"
                 },
                 {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
+                    "name": "scatter"
                 },
                 {
                     "name": "sq"
                 },
                 {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
+                    "name": "wild"
                 },
                 {
                     "name": "sc3"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
                     "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
                 }
             ],
             [
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "s10"
                 },
                 {
                     "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                }
-            ],
-            [
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
                 },
                 {
                     "name": "sa"
@@ -3205,70 +952,25 @@
                     "name": "scatter"
                 },
                 {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
                     "name": "sc2"
                 },
                 {
                     "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
                 },
                 {
                     "name": "sq"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
                     "name": "sa"
                 },
                 {
-                    "name": "sj"
+                    "name": "chip"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sc1"
                 },
                 {
                     "name": "scatter"
@@ -3277,64 +979,16 @@
                     "name": "sc2"
                 },
                 {
-                    "name": "sk"
-                },
-                {
                     "name": "s10"
                 },
                 {
-                    "name": "chip"
+                    "name": "sq"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
+                    "name": "sa"
                 },
                 {
                     "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
                 },
                 {
                     "name": "sc2"
@@ -3343,109 +997,7 @@
                     "name": "sc3"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
+                    "name": "scatter"
                 },
                 {
                     "name": "sa"
@@ -3454,48 +1006,6 @@
                     "name": "chip"
                 },
                 {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sq"
                 },
                 {
@@ -3505,118 +1015,58 @@
                     "name": "sa"
                 },
                 {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "sc2"
-                },
-                {
-                    "name": "sk"
                 },
                 {
                     "name": "s10"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
+                    "name": "scatter"
                 },
                 {
                     "name": "sa"
                 },
                 {
-                    "name": "sj"
+                    "name": "sc1"
                 },
                 {
-                    "name": "chip"
+                    "name": "sc2"
                 },
                 {
                     "name": "sc3"
+                },
+                {
+                    "name": "sq"
                 },
                 {
                     "name": "sa"
                 },
                 {
-                    "name": "sj"
+                    "name": "chip"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
+                    "name": "scatter"
                 },
                 {
                     "name": "sc1"
                 },
                 {
-                    "name": "sc1"
+                    "name": "sa"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
+                    "name": "sc2"
                 },
                 {
                     "name": "s10"
                 },
                 {
-                    "name": "sk"
+                    "name": "sq"
                 },
                 {
-                    "name": "sc2"
+                    "name": "sa"
+                },
+                {
+                    "name": "sc1"
                 },
                 {
                     "name": "scatter"
@@ -3625,110 +1075,23 @@
                     "name": "sc3"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
                     "name": "sq"
-                },
-                {
-                    "name": "s10"
                 },
                 {
                     "name": "sa"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
+                    "name": "chip"
                 }
             ]
         ],
         "freegame": [
             [
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
                     "name": "s10"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
                 },
                 {
                     "name": "sq"
@@ -3737,67 +1100,13 @@
                     "name": "sk"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
                     "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
                 },
                 {
                     "name": "scatter"
                 },
                 {
-                    "name": "sc3"
+                    "name": "sc2"
                 },
                 {
                     "name": "s10"
@@ -3806,10 +1115,37 @@
                     "name": "sj"
                 },
                 {
-                    "name": "sc1"
+                    "name": "sq"
+                },
+                {
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "s10"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc1"
                 },
                 {
                     "name": "sc2"
@@ -3821,73 +1157,10 @@
                     "name": "sj"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "s10"
-                },
-                {
                     "name": "sq"
                 },
                 {
                     "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
                 },
                 {
                     "name": "scatter"
@@ -3896,34 +1169,13 @@
                     "name": "sc1"
                 },
                 {
-                    "name": "sc1"
+                    "name": "sc2"
                 },
                 {
                     "name": "s10"
                 },
                 {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
+                    "name": "sj"
                 },
                 {
                     "name": "sq"
@@ -3932,154 +1184,10 @@
                     "name": "sk"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
                     "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
                 },
                 {
                     "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
                 },
                 {
                     "name": "sc2"
@@ -4091,142 +1199,25 @@
                     "name": "sj"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
                     "name": "sq"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "sk"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
                     "name": "sa"
                 },
                 {
-                    "name": "scatter"
+                    "name": "sc1"
                 },
                 {
-                    "name": "sc3"
+                    "name": "sc2"
                 },
                 {
                     "name": "s10"
                 },
                 {
-                    "name": "sa"
+                    "name": "sj"
                 },
                 {
                     "name": "sq"
@@ -4235,699 +1226,10 @@
                     "name": "scatter"
                 },
                 {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                }
-            ],
-            [
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sa"
                 },
                 {
                     "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
                 }
             ],
             [
@@ -4935,67 +1237,10 @@
                     "name": "sc1"
                 },
                 {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "chip"
-                },
-                {
                     "name": "sc2"
                 },
                 {
                     "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
                 },
                 {
                     "name": "wild"
@@ -5004,37 +1249,10 @@
                     "name": "sk"
                 },
                 {
+                    "name": "sa"
+                },
+                {
                     "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
                 },
                 {
                     "name": "zog"
@@ -5046,10 +1264,7 @@
                     "name": "sc2"
                 },
                 {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
+                    "name": "sc3"
                 },
                 {
                     "name": "sq"
@@ -5058,142 +1273,25 @@
                     "name": "sk"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
+                    "name": "wild"
                 },
                 {
                     "name": "chip"
                 },
                 {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
                     "name": "zog"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
                     "name": "sc1"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
                     "name": "sc2"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
+                    "name": "sc3"
                 },
                 {
                     "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
                 },
                 {
                     "name": "sk"
@@ -5202,43 +1300,22 @@
                     "name": "sa"
                 },
                 {
-                    "name": "sc3"
+                    "name": "chip"
                 },
                 {
                     "name": "wild"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sc1"
                 },
                 {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
+                    "name": "sc2"
                 },
                 {
                     "name": "sc3"
+                },
+                {
+                    "name": "sq"
                 },
                 {
                     "name": "sk"
@@ -5247,136 +1324,43 @@
                     "name": "sa"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
                     "name": "chip"
                 },
                 {
                     "name": "zog"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "wild"
                 },
                 {
                     "name": "sc3"
                 },
                 {
-                    "name": "chip"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sq"
+                },
+                {
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
                     "name": "chip"
                 },
                 {
                     "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
                 },
                 {
                     "name": "sc1"
                 },
                 {
-                    "name": "sq"
+                    "name": "sc2"
                 },
                 {
                     "name": "sc3"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
                 },
                 {
                     "name": "wild"
@@ -5385,474 +1369,21 @@
                     "name": "sk"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
                     "name": "sa"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
+                    "name": "chip"
                 },
                 {
                     "name": "zog"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
                 }
             ],
             [
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
                     "name": "wild"
                 },
                 {
                     "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
                 },
                 {
                     "name": "chip"
@@ -5861,28 +1392,100 @@
                     "name": "zog"
                 },
                 {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "wild"
+                },
+                {
                     "name": "sc2"
                 },
                 {
                     "name": "sc3"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
+                    "name": "chip"
                 },
                 {
                     "name": "zog"
                 },
                 {
+                    "name": "wild"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "zog"
+                },
+                {
+                    "name": "wild"
+                },
+                {
                     "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "zog"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc2"
                 },
                 {
                     "name": "wild"
@@ -5891,34 +1494,39 @@
                     "name": "chip"
                 },
                 {
-                    "name": "sq"
+                    "name": "zog"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
                 },
                 {
-                    "name": "s10"
+                    "name": "wild"
                 },
                 {
                     "name": "sc3"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc1"
+                    "name": "chip"
                 },
                 {
                     "name": "zog"
                 },
                 {
-                    "name": "sj"
+                    "name": "wild"
                 },
                 {
-                    "name": "sc2"
+                    "name": "sk"
+                }
+            ],
+            [
+                {
+                    "name": "sc3"
                 },
                 {
                     "name": "wild"
@@ -5927,34 +1535,22 @@
                     "name": "wild"
                 },
                 {
-                    "name": "s10"
+                    "name": "sa"
                 },
                 {
-                    "name": "sc1"
-                },
-                {
-                    "name": "zog"
+                    "name": "wild"
                 },
                 {
                     "name": "sc2"
                 },
                 {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
                 },
                 {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
+                    "name": "wild"
                 },
                 {
                     "name": "chip"
@@ -5963,202 +1559,7 @@
                     "name": "sc3"
                 },
                 {
-                    "name": "sc3"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
                     "name": "wild"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "wild"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
                 },
                 {
                     "name": "chip"
@@ -6170,25 +1571,100 @@
                     "name": "wild"
                 },
                 {
-                    "name": "sc1"
+                    "name": "sc2"
                 },
                 {
-                    "name": "sc3"
+                    "name": "sk"
                 },
                 {
-                    "name": "sq"
+                    "name": "sa"
                 },
                 {
-                    "name": "s10"
-                },
-                {
-                    "name": "zog"
+                    "name": "wild"
                 },
                 {
                     "name": "chip"
                 },
                 {
                     "name": "wild"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sk"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "chip"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "wild"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "sk"
                 },
                 {
                     "name": "sa"
@@ -6196,13 +1672,25 @@
             ],
             [
                 {
-                    "name": "s10"
+                    "name": "sq"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
+                },
+                {
+                    "name": "scatter"
                 },
                 {
                     "name": "sq"
                 },
                 {
-                    "name": "chip"
+                    "name": "sa"
                 },
                 {
                     "name": "sq"
@@ -6214,465 +1702,12 @@
                     "name": "sc1"
                 },
                 {
-                    "name": "sq"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
                     "name": "sc2"
                 },
                 {
                     "name": "sc3"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc1"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "zog"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sq"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sq"
-                },
-                {
                     "name": "sq"
                 },
                 {
@@ -6682,19 +1717,7 @@
                     "name": "scatter"
                 },
                 {
-                    "name": "zog"
-                },
-                {
-                    "name": "sj"
-                },
-                {
                     "name": "sa"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "scatter"
                 },
                 {
                     "name": "sc1"
@@ -6703,16 +1726,46 @@
                     "name": "sc2"
                 },
                 {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sq"
+                },
+                {
                     "name": "sa"
                 },
                 {
-                    "name": "sk"
+                    "name": "sq"
                 },
                 {
-                    "name": "sk"
+                    "name": "sa"
                 },
                 {
                     "name": "sc1"
+                },
+                {
+                    "name": "scatter"
+                },
+                {
+                    "name": "sc3"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sq"
+                },
+                {
+                    "name": "sa"
+                },
+                {
+                    "name": "sc1"
+                },
+                {
+                    "name": "sc2"
                 },
                 {
                     "name": "sc3"
@@ -6724,55 +1777,19 @@
                     "name": "scatter"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sk"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
                     "name": "sq"
                 },
                 {
-                    "name": "sk"
-                },
-                {
-                    "name": "scatter"
-                },
-                {
-                    "name": "sc3"
-                },
-                {
-                    "name": "sc2"
+                    "name": "sa"
                 },
                 {
                     "name": "sc1"
                 },
                 {
-                    "name": "sq"
-                },
-                {
                     "name": "sc2"
                 },
                 {
-                    "name": "sq"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
+                    "name": "sc3"
                 },
                 {
                     "name": "sq"
@@ -6781,13 +1798,10 @@
                     "name": "sa"
                 },
                 {
-                    "name": "sj"
+                    "name": "sq"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
+                    "name": "sa"
                 },
                 {
                     "name": "scatter"
@@ -6796,34 +1810,10 @@
                     "name": "sc2"
                 },
                 {
-                    "name": "sk"
+                    "name": "sc3"
                 },
                 {
-                    "name": "sj"
-                },
-                {
-                    "name": "sa"
-                },
-                {
-                    "name": "chip"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "sc2"
-                },
-                {
-                    "name": "s10"
-                },
-                {
-                    "name": "sj"
-                },
-                {
-                    "name": "s10"
+                    "name": "sq"
                 }
             ]
         ]

@@ -1,0 +1,28 @@
+{
+    "modes": [
+        {
+            "name": "base",
+            "cost": 1.0,
+            "events": "books_base.jsonl.zst",
+            "weights": "lookUpTable_base_0.csv"
+        },
+        {
+            "name": "bonus_hunt",
+            "cost": 3.0,
+            "events": "books_bonus_hunt.jsonl.zst",
+            "weights": "lookUpTable_bonus_hunt_0.csv"
+        },
+        {
+            "name": "rocket_buy",
+            "cost": 100.0,
+            "events": "books_rocket_buy.jsonl.zst",
+            "weights": "lookUpTable_rocket_buy_0.csv"
+        },
+        {
+            "name": "hyper_buy",
+            "cost": 200.0,
+            "events": "books_hyper_buy.jsonl.zst",
+            "weights": "lookUpTable_hyper_buy_0.csv"
+        }
+    ]
+}
